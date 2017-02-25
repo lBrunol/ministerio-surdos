@@ -1,0 +1,40 @@
+/**
+ * Mixins
+ */
+
+/**
+ * Aplica opacidade compatível com o navegador Internet Explorer 8
+ * @param float $value: Opacidade a ser aplicada no elemento, valor de 0 a 1
+ */
+old-opacity($value) {
+	opacity: $value;
+	filter: 'alpha(opacity=%s)' % ($value * 100);
+}
+
+/**
+ * Aplica opacidade compatível com o navegador Internet Explorer 8
+ * @param float $value: Opacidade a ser aplicada no elemento, valor de 0 a 1
+ */
+toRem($value){
+	u = unit($value);
+
+	if (u is 'px'){
+		return unit($value/$font-size, 'rem');
+	} else {
+		return unit($value, u);
+	}
+}
+
+$reset-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+$clearfix {
+	&:after {
+		content: "";
+    	display: table;
+    	clear: both;
+	}
+}

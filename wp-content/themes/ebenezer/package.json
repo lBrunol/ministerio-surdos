@@ -1,0 +1,30 @@
+{
+  "name": "ministerio-ebenezer",
+  "version": "1.0.0",
+  "description": "Site do Ministério Ebenéze",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lBrunol/ministerio-surdos.git"
+  },
+  "author": "Bruno Alves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lBrunol/ministerio-surdos/issues"
+  },
+  "homepage": "https://github.com/lBrunol/ministerio-surdos#readme",
+  "dependencies": {
+    "autoprefixer": "^6.7.3",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.0.1",
+    "pump": "^1.0.2"
+  }
+}

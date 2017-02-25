@@ -1,0 +1,135 @@
+/**
+ * Sistema de grid responsivo
+ */
+
+$gutter = 30px; // Espaçamento entre colunas do grid
+$half-gutter = ($gutter / 2);
+$cols = 12; //Número de colunas do grid
+$col-push = false;
+$col-offset = false;
+$name-cols = null;
+
+//Configuração do grid
+$grid-config = {
+    xs: {
+        name: 'xs',
+        containerWidth: false,
+        breakpointWidth: false
+    },
+    vs: {
+        name: 'vs',
+        containerWidth: 480px,
+        breakpointWidth: 520px
+    },
+    sm: {
+        name: 'sm',
+        containerWidth: 720px,
+        breakpointWidth: 768px
+    },
+    md: {
+        name: 'md',
+        containerWidth: 940px,
+        breakpointWidth: 992px
+    },
+    lg: {
+        name: 'lg',
+        containerWidth: 1140px,
+        breakpointWidth: 1200px
+    }
+}
+
+ /**
+* Função para gerar as colunas
+*
+* @param $name string nome da coluna
+*/
+
+grid($name) {
+    //Itera sobre o número de colunas definido
+    for $col in (1..$cols) {
+        //Calcula a largura das colunas
+        $size = ((100% / $cols) * $col);
+
+        .col-{$name}-{$col} {
+            width: $size;
+        }
+
+		//Inclui os nomes das colunas para posteriormente, gerar o estilo comum entre todos os cols.		
+		push($name-cols, 'col-' + $name + '-' + $col);
+        
+		if($col-offset) {
+			.col-{$name}-offset-{$col} {
+				margin-left: $size;
+			}
+		}
+
+		if($col-push) {
+
+			if($col == length($cols - 1)){
+				.col-{$name}-push-0 {
+					left: auto;
+				}
+			}
+
+			.col-{$name}-push-{$col} {
+				left: $size;
+			}
+		}
+    }
+}
+
+// Mixin para renderizar o padding das colunas
+$container-padding {
+	padding-right: $half-gutter;
+	padding-left: $half-gutter;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	@extend $container-padding;
+}
+
+.container-fluid {
+	@extend $container-padding;
+}
+
+.row {
+	margin-right: -($half-gutter);
+	margin-left: -($half-gutter);
+	
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+for $key, $value in $grid-config {
+    
+    if $value.containerWidth {
+        @media (min-width: $value.breakpointWidth) {
+            .container {
+                width: $value.containerWidth;
+            }
+            grid($value.name);
+        }
+    }
+
+    //Gera o grid para a menor resolução que não necessita de breakpoint
+    if !$value.containerWidth {
+        grid($value.name);
+    }    
+}
+
+//Renderiza o estilo comum entre todos os cols
+for $key, $value in $name-cols{
+	if($key) {
+		.{$key}{
+  			min-height: 1px;
+			@extend $container-padding;
+			float: left;
+			position: relative;
+		}
+	}
+}
