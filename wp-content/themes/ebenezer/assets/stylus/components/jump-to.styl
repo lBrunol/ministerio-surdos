@@ -1,0 +1,28 @@
+.jump-to { 
+
+    position: absolute;
+    z-index: 999999;
+    
+    > .link { 
+        width: 1px; 
+        height: 1px;
+        padding: 5px;
+        left: -10000px; 
+        background-color: $jump-to-bg;
+        position: absolute; 
+        overflow: hidden;
+        
+
+        &:focus,
+        &:active,
+        &:hover {
+            width: auto; 
+            height: auto;
+            left: 0;  
+            color: #fff;
+            text-decoration: none;
+            position: static; 
+            overflow: visible; 
+        }
+    }
+}

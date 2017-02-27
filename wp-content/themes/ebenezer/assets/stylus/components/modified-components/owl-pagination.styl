@@ -1,0 +1,24 @@
+.owl-pagination {
+
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+
+    .owl-page { 
+        display: inline-block; 
+        margin-right: 10px; 
+    }
+    .owl-page span { 
+        background-color: $owl-page-bg;
+        width: 15px;
+        height: 15px; 
+        display: inline-block; 
+        border-radius: 50%;
+        //border: 2px solid #fff; 
+    }
+    .owl-page:hover span, 
+    .owl-page.active span { 
+        background-color: $owl-page-bg-hover;
+    }
+}

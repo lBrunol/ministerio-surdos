@@ -58,7 +58,7 @@ var Menu = function(){
 	self.init();
 
 	$(window).on('resize', function(){
-		if(validaTela(_SCREENMD)) {
+		if(validaTela(_SCREENLG)) {
 			$('body').removeClass(self.classFixOverflow);
 			self.$wrapperSite.removeClass(self.classActive);
 			self.$menuFixIe.removeClass(self.classNoOpacity);
@@ -66,8 +66,65 @@ var Menu = function(){
 	});
 }
 
+var HomeBanner = function(){
+	var self = this;
+
+	self.$homeBanner = $('.home-banner');
+	self.leftButton = '.js-left-banner';
+	self.rightButton = '.js-right-banner';
+	
+	self.init = function(){
+		self.$homeBanner.owlCarousel({
+			loop: true,
+			navigation: true,
+			navigationText: ["<span class='sr-text'>Ir para o banner anterior</span><button class='js-left-banner' type='button'><i class='icon icon-angle-left'></i></button>", "<span class='sr-text'>Ir para o próximo banner</span><button type='button' class='js-right-banner'><i class='icon icon-angle-right'></i></button>"],
+			pagination: true,
+			responsive: true,
+			singleItem: true,
+			stopOnHover: true
+		});
+	}
+
+	$('body').on('click', self.leftButton, function(e){
+		e.stopPropagation();
+
+		var owl = self.$homeBanner.data('owlCarousel');
+
+		if(typeof owl !== typeof undefined){
+			owl.prev();
+		}
+	});
+
+	$('body').on('click', self.rightButton, function(e){
+		e.stopPropagation();
+
+		var owl = self.$homeBanner.data('owlCarousel');
+
+		if(typeof owl !== typeof undefined){
+			owl.next();
+		}
+	});
+
+	//Habilita a navegação por teclado no banner da home
+	$('body').on('keyup', function(e){
+
+		var owl = self.$homeBanner.data('owlCarousel');
+
+		if(typeof owl !== typeof undefined){
+			if (e.keyCode == 37) {
+            	owl.prev();
+        	} else if (e.keyCode == 39) {
+            	owl.next();
+			}
+		}
+	});
+
+	self.init();
+}
+
 $(function(){
 	var menu = new Menu();
+	var homeBanner = new HomeBanner();
 });
 
 /*

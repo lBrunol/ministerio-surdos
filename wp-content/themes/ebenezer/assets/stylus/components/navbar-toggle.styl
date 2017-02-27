@@ -1,0 +1,24 @@
+.navbar-toggle { 
+    width: 52px; 
+    height: 40px; 
+    padding: 9px 10px;
+    position: relative;
+    @extend .reset-button;
+    
+    > .icon-bar { 
+        display: block; 
+        width: 30px;
+        height: 3px; 
+        border-radius: 4px; 
+        background-color: $navbar-toggle-bg; 
+        transition: all 0.2s linear;
+    }
+
+    > .icon-bar:nth-child(2) { 
+        opacity: 1; 
+    }
+
+    .icon-bar + .icon-bar { 
+        margin-top: 4px; 
+    }
+}

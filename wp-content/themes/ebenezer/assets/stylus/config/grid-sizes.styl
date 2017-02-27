@@ -1,0 +1,45 @@
+//Configuração do grid
+$grid-config = {
+    xs: {
+        name: 'xs',
+        containerWidth: false,
+        breakpointWidth: false
+    },
+    vs: {
+        name: 'vs',
+        containerWidth: 480px,
+        breakpointWidth: 520px
+    },
+    sm: {
+        name: 'sm',
+        containerWidth: 720px,
+        breakpointWidth: 768px
+    },
+    md: {
+        name: 'md',
+        containerWidth: 940px,
+        breakpointWidth: 992px
+    },
+    lg: {
+        name: 'lg',
+        containerWidth: 1140px,
+        breakpointWidth: 1200px
+    }
+}
+
+// para media querie com min-width
+$screen-lg-min = $grid-config.lg.breakpointWidth;
+$screen-md-min = $grid-config.md.breakpointWidth;
+$screen-sm-min = $grid-config.sm.breakpointWidth;
+$screen-vs-min = $grid-config.vs.breakpointWidth;
+
+// para media querie com max-width
+$screen-lg = ($screen-lg-min - 1);
+$screen-md = ($screen-md-min - 1);
+$screen-sm = ($screen-sm-min - 1);
+$screen-xs = ($screen-xs-min - 1);
+
+$container-lg = $grid-config.lg.containerWidth;
+$container-md = $grid-config.md.containerWidth;
+$container-sm = $grid-config.sm.containerWidth;
+$container-vs = $grid-config.vs.containerWidth;

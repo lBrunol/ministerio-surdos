@@ -1,0 +1,28 @@
+.btn-default {
+    padding: 8px 35px;
+    font-weight: bold;
+    color: $btn-default-text;
+    border-radius: 20px;
+    border: 2px solid ;
+    border-color: $btn-default-border;
+    transition: .2s all linear;
+    display: inline-block;
+
+    &:hover
+    &:focus,
+    &:active {
+        background: @border-color;
+        color: $btn-default-text-hover;
+        outline: 0;
+    }
+
+    a&{
+        text-decoration: none;
+
+        &:hover
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+    }
+}

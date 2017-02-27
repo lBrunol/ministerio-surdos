@@ -27,10 +27,10 @@
 	<header class="header-site">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2 col-xs-6">
+				<div class="col-lg-2 col-xs-6">
 					<a href="#" class="logo-site"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Ministério Ebenézer" class="_img-responsive"></a>
 				</div>
-				<div class="col-xs-6 __invisible-lg __invisible-md _text-right">
+				<div class="col-xs-6 __invisible-lg _text-right">
 					<div class="navbar-control">
 						<p class="text">Menu</p>
 						<button type="button" class="navbar-toggle" aria-expanded="false" aria-label="Mostrar menu">
@@ -41,6 +41,7 @@
 					</div>
 				</div>
 				<div class="col-md-10">
+					<span class="sr-text">Menu Principal</span>
 					<nav class="container-nav" id="mainnav" tabindex="-1">
 						<ul class="nav-site">
 							<li class="item"><a href="#" class="link">Sobre nós</a></li>

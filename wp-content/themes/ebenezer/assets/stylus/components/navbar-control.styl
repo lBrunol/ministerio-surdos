@@ -1,0 +1,19 @@
+.navbar-control {
+	
+	@extend .clearfix;
+
+    &:not(.-close) {
+        margin-top: 75px;
+	    margin-left: 20px;
+    }
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+	> .text {
+    	margin: 0 5px 0 0;
+    	font-size: 14px;
+    	color: $navbar-control-text;	
+	}
+}

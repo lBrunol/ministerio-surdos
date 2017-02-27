@@ -1,5 +1,5 @@
 /**
- * Estilização base
+ * Estilização básica do site
  */
  
 * {
@@ -19,6 +19,20 @@ html {
 	color: #fff;
 }
 
+:focus {
+	border: 0;
+	outline: 2px auto $default-text-color;
+}
+
+h1 {
+	margin-bottom: 30px;
+	font-family: 'Montserrat';
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 ul {
 	padding: 0;
 	margin: 0;
@@ -29,6 +43,6 @@ li {
 	margin-bottom: 0;
 }
 
-:focus {
-	outline: 2px auto $default-text-color;
+button {
+	@extend .reset-button;
 }
