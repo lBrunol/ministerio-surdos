@@ -1,0 +1,42 @@
+.input-group {
+    display: table;
+    position: relative;
+
+    &.-full {
+        width: 100%;
+    }
+
+    > .addon {
+        width: 1%;
+        display: table-cell;
+
+        > .button {        
+            padding: $form-control-padding;
+            font-size: $form-control-font-size;
+            color: $form-control-text;
+            line-height: $form-control-line-height;
+            border-radius: $form-control-radius;
+            border: $form-control-border;
+            border-left: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            transition: .2s all linear;
+            display: inline-block;
+
+            &:before {
+                transition: .2s transform linear;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                outline: 0;
+                color: darken(@color, 50%);
+                &:before {
+                    transform: scale(1.2);
+                    transform-origin: center;
+                }
+            }
+        }
+    }    
+}

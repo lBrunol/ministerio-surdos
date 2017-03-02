@@ -1,0 +1,117 @@
+.video-site {
+     
+    margin-bottom: 20px;
+    display: block;
+	position: relative;
+
+    .embed {
+        display: none;
+    }
+    
+    .embed.js-visible {
+        display: block;
+    }
+
+    > .link > .image,
+    > .image {
+        width: 100%;
+    }
+    
+    > .link {
+        display: block;
+        position: relative;
+    }
+
+    > .link.js-hidden {
+        display: none;
+    }		
+
+    > .link .icon {
+        content: '\e80b';
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);          
+        color: #fff;
+        font-size: 110px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        z-index: 2;
+        
+        &:before {
+            line-height: 2.7;
+            transform: scale(1);
+            opacity: 1;
+            visibility: visible;
+            transition: all linear .4s;
+        }
+        
+        &.js-active:before {
+            transform: scale(1.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all linear .4s;
+        }
+    }
+
+    > .label {
+        width: 100%;
+	    padding: 10px 15px;
+        bottom: 0;
+        left: 0;
+	    color: #fff;
+	    text-align: center;
+        background-color: rgba(0,0,0,0.7);        
+
+        > .description {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        > .description > .title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Open Sans';
+            text-transform: none;
+            text-align: left;
+            line-height: normal;	
+        }
+        
+        .link {
+            color: #fff;
+            
+            &:hover,
+            &:focus,
+            &:active {
+                color: @color;
+                text-decoration: none;
+            }
+        }
+
+        @media (min-width: $screen-sm-min) {
+            position: absolute;
+            z-index: 3;
+        }
+    }
+
+    
+
+    @media (max-width: $screen-lg) {
+        > .link .icon:before {
+            line-height: 2;
+        }
+    }
+
+    @media (max-width: $screen-vs) {
+
+        > .link .icon {
+            font-size: 80px;   
+        }
+        
+    }
+}

@@ -1,0 +1,49 @@
+.footer-site {
+
+    padding: 15px 0;
+    margin-top: 90px;
+    background-color: $footer-bg;
+
+    .phrase {
+
+        position: relative;
+        margin-left: 15px;
+
+        &:before,
+        &:after {
+            font-family: 'fontAwesome';
+            position: absolute;
+        }
+
+        &:before {
+            content: '\f10d';
+            top: -15px;
+            left: -15px;
+        }
+
+        &:after {
+            content: '\f10e';
+            bottom: -15px;
+        }
+    }
+
+    .facebook {
+        margin-top: 0;
+
+        a { 
+            color: inherit;
+        }
+    }
+
+    .location {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-md-min){
+        .facebook,
+        .location {
+            text-align: right;
+        }
+    }
+}

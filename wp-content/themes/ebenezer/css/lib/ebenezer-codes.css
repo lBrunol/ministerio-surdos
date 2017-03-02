@@ -4,8 +4,14 @@
 .icon-video:before { content: '\e802'; } /* '' */
 .icon-location:before { content: '\e803'; } /* '' */
 .icon-cog:before { content: '\e804'; } /* '' */
+.icon-search:before { content: '\e805'; } /* '' */
+.icon-interpretation:before { content: '\e806'; } /* '' */
+.icon-play-circled2:before { content: '\e807'; } /* '' */
+.icon-article:before { content: '\e808'; } /* '' */
 .icon-angle-left:before { content: '\f104'; } /* '' */
 .icon-angle-right:before { content: '\f105'; } /* '' */
+.icon-quote-left:before { content: '\f10d'; } /* '' */
+.icon-quote-right:before { content: '\f10e'; } /* '' */
 .icon-calendar-empty:before { content: '\f133'; } /* '' */
 .icon-newspaper:before { content: '\f1ea'; } /* '' */
 .icon-facebook-official:before { content: '\f230'; } /* '' */

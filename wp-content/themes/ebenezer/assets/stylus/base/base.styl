@@ -24,13 +24,28 @@ html {
 	outline: 2px auto $default-text-color;
 }
 
-h1 {
-	margin-bottom: 30px;
+h1,
+h2 {
+	margin-top: 0;
 	font-family: 'Montserrat';
-	font-size: 24px;
 	font-weight: 700;
-	text-align: center;
 	text-transform: uppercase;
+}
+
+h1 {
+	margin-bottom: 30px;	
+	font-size: 24px;	
+	text-align: center;	
+}
+
+h2 {
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+
+p {
+	line-height: 160%;
+    margin-bottom: 30px;
 }
 
 ul {
@@ -38,9 +53,25 @@ ul {
 	margin: 0;
 }
 
+a {
+	color: $anchor-color;
+	text-decoration: none;
+	
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: underline;
+	}
+}
+
 li {
 	list-style: none;
 	margin-bottom: 0;
+}
+
+object {
+	position: absolute;
+    left: -1000px;
 }
 
 button {
