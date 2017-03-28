@@ -27,13 +27,13 @@ get_header(); ?>
 						<span class="sr-text" id="searchInfo">Aqui você pode buscar as informações do site.</span>
 						<input type="text" placeholder="O que você procura?" class="form-control icon-search" />
 						<div class="addon">
-							<button class="button icon-search"></button>
+							<button class="button icon-search" title="Buscar"></button>
 						</div>
 					</div>
 				</form>
 				<div>
 					<h2><span class="icon-calendar"></span> Próximos eventos</h2>
-					<ul class="list-events">
+					<ul class="list-events -border">
 						<li class="item">
 							<span class="date">11/02/2017 - 17h</span>
 							<a href="#" class="link"><span class="icon icon-angle-right"> Encontro de casais</a>
@@ -124,12 +124,11 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-md-7">
 						<div class="video-site">
-							<a href="#" class="link">
+							<a href="#" class="link" data-videoid="Iqej4uP7ogI" aria-label="Reproduzir vídeo - Curso de Libras - Módulo Prático: Aula 1 - Saudações e Apresentações">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/curso-libras-modulo-3.jpg" alt="" class="image _img-responsive" />
-								<span class="icon icon-play-circled2"></span>
+								<span class="icon icon-play-circled2" aria-hidden="true"></span>
 							</a>
 							<div class="embed-responsive embed">
-								<iframe class="media" src="#" frameborder="0" allowfullscreen></iframe>
 							</div>							
 							<div class="label">
 								<div class="description">

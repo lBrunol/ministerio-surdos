@@ -122,9 +122,41 @@ var HomeBanner = function(){
 	self.init();
 }
 
+var AccessibilityFeatures = function(){
+
+	$('.js-font-default').on('click', function(){
+		$('html').css('font-size', 16);
+	});
+
+	//Aumentar/Diminuir o tamanho da fonte
+    $('.js-font-increase').on('click', function(){
+        var currentSize = parseInt($('html').css('font-size'));
+
+        if(currentSize != 32){
+            currentSize += 2;
+            $('html').css('font-size', currentSize);
+        }
+    });
+
+    $('.js-font-decrease').on('click', function(){
+        var currentSize = parseInt($('html').css('font-size'));
+
+        if(currentSize != 10){
+            currentSize -= 2;
+            $('html').css('font-size', currentSize);
+        }
+    });
+
+    //Escala cinza na página
+    $('.js-high-contrast').on('click', function(){
+        $('body').toggleClass('-grayscale');
+    });
+}
+
 $(function(){
 	var menu = new Menu();
 	var homeBanner = new HomeBanner();
+	var accessibilityFeatures = new AccessibilityFeatures();
 });
 
 /*

@@ -6,3 +6,24 @@
         border-top-right-radius: 0;
     }
 }
+
+.form-group {
+    &.-error {
+        .control-label {
+            color: $form-error;
+        }
+
+        .form-control {
+            border-color: $form-error;
+        }
+    }
+}
+
+.form-search {
+
+    .form-control,
+    .input-group > .addon > .button {
+        color: $search-form-control-text;
+        border-color: $search-form-control-border;
+    }
+}

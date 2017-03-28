@@ -8,40 +8,41 @@
  */
 
 ?>
+<?php 
+	
+?>
+<article>
+	<?php 
+		$post_content = wp_trim_words( get_the_excerpt(), 100, ' [..]' );
+		$post_title = get_the_title();
+		
+		if ( !$post_content ) {
+			$post_content = wp_trim_words( get_the_content(), 100, ' [..]' );
+		}
+		$post_link = esc_url( get_permalink() );
+	?>
+	
+	<header class="post-summary -single">
+		<?php if ( 'post' === get_post_type() ) : $post_dates = ebenezer_get_post_date(); ?>
+			<div class="date">
+				<span class="icon-calendar-empty"></span>
+				<span>
+					<time datetime="<?php echo $post_dates['date_complete']; ?>"><?php echo $post_dates['date_friendly']; ?></time>
+				</span>			
+			</div>
+		<?php endif; ?>
+		<h1 class="title"><?php echo $post_title; ?></h1>
+		<?php if( get_the_tag_list() ) : ?>			
+			<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="item">', '</li><li class="item">', '</li></ul>' ); ?>	
+		<?php endif; ?>
+	</header>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<div>
 		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php ebenezer_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ebenezer' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ebenezer' ),
-				'after'  => '</div>',
-			) );
+			the_content();	
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php ebenezer_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</div>
+	<?php 
+		echo do_shortcode('[fbcomments url="' . get_permalink() . '" count="off" num="5"]');
+	?>
+</article>

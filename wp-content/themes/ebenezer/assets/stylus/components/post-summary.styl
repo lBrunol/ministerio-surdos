@@ -2,21 +2,74 @@
 
     margin-bottom: 20px;
 
-    > .date {
+    .date {
         font-size: 12px;
         font-weight: bold;
     }
 
-    > .title {
+    .title {
         margin: 0;
         font-family: 'Montserrat';
         font-size: 20px;
         font-weight: bold;
+        text-align: left;
         text-transform: uppercase;
         color: $post-summary-title;
     }
 
-    > .link {
+    .link {
         text-decoration: underline;
+    }
+
+    &.-internal {
+
+        @extend .clearfix;
+
+        &:first-of-type {
+            margin-top: 50px;
+        }
+
+        margin-bottom: 50px;
+        border-bottom: 1px solid $post-summary-border-bottom;
+
+        .image {
+            width: 30%;
+            margin-right: 20px;
+            float: left;
+
+            img {
+                display: block;
+            }
+        }
+
+        .image + .content {
+            width: 67%;
+            float: left;
+        }
+
+        .date {
+            font-size: toRem(12px);
+        }
+
+        .title {
+            font-size: toRem(24px);
+        }
+
+        .summary {
+            margin-top: 15px;
+        }
+
+    }
+
+    
+
+    &.-single {
+        .date {
+            font-size: toRem(12px);
+        }
+
+        .title {
+            font-size: toRem(26px);
+        }
     }
 }

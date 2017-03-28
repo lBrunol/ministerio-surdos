@@ -14,6 +14,10 @@ html {
 	color: $default-text-color;
 }
 
+body {
+	font-size: toRem(16px);
+}
+
 ::selection {
 	background: $base;
 	color: #fff;
@@ -39,11 +43,12 @@ h1 {
 }
 
 h2 {
-	margin-bottom: 30px;
 	font-size: 20px;
+	margin-bottom: 30px;
 }
 
 p {
+	font-size: 16px;
 	line-height: 160%;
     margin-bottom: 30px;
 }
@@ -56,7 +61,8 @@ ul {
 a {
 	color: $anchor-color;
 	text-decoration: none;
-	
+	transition: .2s color linear;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -76,4 +82,20 @@ object {
 
 button {
 	@extend .reset-button;
+	transition-duration: .2s;
+	transition-timing-function: linear;
+	transition-property: color, background;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: toRem(20px);
+    border-left: 5px solid $header-text-hover;
+
+	ol:last-child, 
+	p:last-child, 
+	ul:last-child {
+		margin: 0;
+	}
 }

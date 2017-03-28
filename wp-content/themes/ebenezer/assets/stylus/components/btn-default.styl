@@ -2,6 +2,7 @@
     padding: 8px 35px;
     font-weight: bold;
     color: $btn-default-text;
+    background-color: transparent;
     border-radius: 20px;
     border: 2px solid ;
     border-color: $btn-default-border;
@@ -23,6 +24,27 @@
         &:focus,
         &:active {
             text-decoration: none;
+        }
+    }
+
+    input&{
+        &:hover
+        &:focus,
+        &:active {
+            cursor: pointer;
+        }
+    }
+
+    &.-danger {
+        color: $btn-default-danger-text;
+        border-color: $btn-default-danger-border;
+        
+
+        &:hover
+        &:focus,
+        &:active {
+            background: @border-color;
+            color: $btn-default-danger-text-hover;
         }
     }
 }

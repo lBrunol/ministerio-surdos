@@ -1,11 +1,30 @@
 .list-events {
+
+    &.-border {
+        > .item {
+            border-bottom: 1px solid $list-events-border-bottom;
+            margin-bottom: 20px;
+        }
+    }
+
+    &.-bordergray {
+        > .item {
+            border-bottom: 1px solid $list-events-border-bottom-gray;
+            margin-bottom: 15px;
+        }
+    }
+
+    &.-article {
+        > .item > .text {
+            font-size: toRem(14px);
+            margin: 0 0 15px;
+        }
+    }
+
     > .item {
-
-        margin-bottom: 20px;
-        border-bottom: 1px solid $list-events-border-bottom;
-
+        
         > .date {
-            font-size: 12px;
+            font-size: toRem(12px);
             display: block;
         }
 

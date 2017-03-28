@@ -8,7 +8,7 @@
  */
 
 ?>
-		<footer class="footer-site">
+		<footer class="footer-site" id="footer" tab-index="-1">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">

@@ -1,0 +1,39 @@
+.pagination-site {
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	text-align: center;
+	
+	> .item {
+        padding: 0;
+		margin-bottom: 10px;
+		list-style: none;
+		display: inline-block;
+		text-align: center;
+	}
+	
+	> .item.-alone,
+	> .item > .link {
+		width: 40px;
+		margin-right: 10px;
+		font-weight: bold;
+		font-size: 0.875rem;        
+		line-height: normal;
+		padding: 12px 0;
+		background-color: $pagination-site-bg;
+		display: inline-block;
+	}
+	
+	> .item > .link { 
+        
+        color: $pagination-site-color;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.-is-active {
+			text-decoration: none;
+			color: $pagination-site-color-hover;
+		}
+	}	
+}

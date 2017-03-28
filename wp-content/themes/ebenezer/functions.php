@@ -29,13 +29,15 @@ if ( ! function_exists( 'ebenezer_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+
+		add_image_size( 'thumb_post', 250, 200, true );
 	}
 endif;
 
 add_action( 'after_setup_theme', 'ebenezer_setup' );
 
 //Desabilita a barra de administração do site
-show_admin_bar(false);
+//show_admin_bar(false);
 
 /**
  * Estilos e scripts do site
@@ -43,6 +45,7 @@ show_admin_bar(false);
 function ebenezer_scripts() {
 	wp_enqueue_style( 'ebenezer-css-basic', get_template_directory_uri() . '/css/lib/basic-style.css' );
 	wp_enqueue_style( 'ebenezer-css', get_template_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'ebenezer-wp-css', get_template_directory_uri() . '/css/wordpress-style.css' );
 	wp_enqueue_style( 'ebenezer-css-owl-carousel', get_template_directory_uri() . '/css/lib/owl.carousel.css' );
 	wp_enqueue_style( 'ebenezer-css-fonts', get_template_directory_uri() . '/css/lib/ebenezer-codes.css' );
 	
@@ -50,9 +53,23 @@ function ebenezer_scripts() {
 	wp_enqueue_script( 'ebenezer-js-jquery', 'https://code.jquery.com/jquery-1.12.4.min.js', true );
 	wp_enqueue_script( 'ebenezer-js-owl-carousel', get_template_directory_uri() . '/js/lib/owl.carousel.min.js',  true );
 	wp_enqueue_script( 'ebenezer-js-general-scripts', get_template_directory_uri() . '/js/scripts.js',  true );
+	wp_enqueue_script( 'ebenezer-js-home-scripts', get_template_directory_uri() . '/js/script-home.js',  true );
 }
 
 add_action( 'wp_enqueue_scripts', 'ebenezer_scripts' );
+
+function add_excerpt_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
+add_action( 'init', 'add_excerpt_to_pages' );
+
+// function add_image_class($class){
+//     $class = '_img-responsive';
+//     return $class;
+// }
+
+// add_filter('get_image_tag_class','add_image_class');
 
 /**
  * Registra widgets.
@@ -71,3 +88,13 @@ function ebenezer_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'ebenezer_widgets_init' );
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Funções do tema
+ */
+require get_template_directory() . '/inc/custom-theme-functions.php';

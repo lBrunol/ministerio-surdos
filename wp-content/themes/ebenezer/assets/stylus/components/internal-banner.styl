@@ -1,20 +1,31 @@
 .internal-banner {
 
-    margin-top: 20px;
     background-color: $internal-banner-bg;
     min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    &.-image {
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .title,
+        .description  {
+            background-color: alpha($internal-banner-text-bg, 0.75);
+        }
+    }
+
     .title {
-        color: #fff;
+        padding: 0 15px;
         margin: 0 0 40px 0;
         font-size: toRem(60px);
+        color: $internal-banner-color;
     }
 
     .description {
-        color: #fff;
+        padding: 0 15px;        
         font-size: toRem(20px);
+        color: $internal-banner-color;
     }
 }

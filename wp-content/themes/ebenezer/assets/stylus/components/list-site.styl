@@ -1,0 +1,56 @@
+.internal-content ul,
+.internal-content ol,
+.list-site {
+	margin-bottom: 20px;
+	padding: 0;
+    display: block;
+
+	> li {
+		padding-left: 20px;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::before {
+            content: '\2022';
+            max-width: 0;
+            max-height: 0;
+            left: 0;
+            font-size: 160%;
+            line-height: 1.45rem;
+            display: block;
+            position: absolute;
+        }
+	}
+
+    &.-green {
+        > li {
+            &::before {
+                color: $base;
+            }
+        }
+    }
+
+    &.-check {
+        > li {
+            padding-left: 25px;
+
+            &::before {               
+                content: '\e80f';
+                font-size: 100%;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    &.-simple {
+
+        > li {
+            padding-left: 0;
+            margin-bottom: 5px;
+
+            &::before {
+                display: none;
+            }
+        }
+    }     
+}

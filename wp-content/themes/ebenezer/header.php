@@ -8,6 +8,9 @@
  */
 
 ?>
+<?php
+	$main_menu_items = wp_get_nav_menu_items( wp_get_nav_menu_object( 'principal' ) );
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -28,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-2 col-xs-6">
-					<a href="#" class="logo-site"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Ministério Ebenézer" class="_img-responsive"></a>
+					<a href="/" class="logo-site"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Ministério Ebenézer" class="_img-responsive"></a>
 				</div>
 				<div class="col-xs-6 __invisible-lg _text-right">
 					<div class="navbar-control">
@@ -40,21 +43,20 @@
 						</button>
 					</div>
 				</div>
+				<?php if( $main_menu_items ) : ?>
 				<div class="col-md-10">
 					<span class="sr-text">Menu Principal</span>
 					<nav class="container-nav" id="mainnav" tabindex="-1">
 						<ul class="nav-site">
-							<li class="item"><a href="#" class="link">Sobre nós</a></li>
-							<li class="item"><a href="#" class="link">Cursos e serviços</a></li>
-							<li class="item"><a href="#" class="link">Programação</a></li>
-							<li class="item"><a href="#" class="link">Vídeos</a></li>
-							<li class="item"><a href="#" class="link">Artigos</a></li>
-							<li class="item"><a href="#" class="link">Eventos</a></li>
-							<li class="item"><a href="#" class="link">Nossa localização</a></li>
-							<li class="item"><a href="#" class="link">Fale Conosco</a></li>
+							<?php foreach( $main_menu_items as $item ) : ?>
+								<?php if( (int) $item -> menu_item_parent === 0 ) : ?>
+									<li class="item"><a href="<?php echo $item -> url; ?>" class="link" <?php if( $item -> target === '_blank' ) echo 'target="_blank"'; ?>><?php echo $item -> title; ?></a></li>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</ul>
 					</nav>
 				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</header>

@@ -1,0 +1,37 @@
+.accessibility-list{
+
+	> .item {
+
+		display: inline-block;
+		
+		> .button {
+			padding-right: 0;
+			padding-left: 20px;
+			font-size: toRem(20px);
+			font-weight: 700;
+			color: $accessibility-list-icon;
+			background: transparent;
+			border: 0;
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $accessibility-list-icon-hover;
+				outline: none;
+			}
+
+			.icon:before {
+				font-size: 100%;
+			}
+			
+			^[1]:first-child ^[2..-1] {
+				padding-left: 0;
+			}
+			
+			^[1]:last-child ^[2..-1] {
+				padding-left: 10px;
+				font-weight: normal;				
+			}
+		}		
+	}	
+}

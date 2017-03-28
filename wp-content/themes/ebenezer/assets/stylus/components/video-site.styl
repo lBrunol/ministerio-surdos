@@ -22,7 +22,8 @@
         position: relative;
     }
 
-    > .link.js-hidden {
+    > .link.js-hidden,
+    > .label.js-hidden {
         display: none;
     }		
 
@@ -38,11 +39,11 @@
         font-size: 110px;
         display: flex;
         justify-content: center;
+        align-items: center;
         position: absolute;
         z-index: 2;
         
-        &:before {
-            line-height: 2.7;
+        &:before {            
             transform: scale(1);
             opacity: 1;
             visibility: visible;
@@ -96,6 +97,17 @@
         @media (min-width: $screen-sm-min) {
             position: absolute;
             z-index: 3;
+        }
+    }
+
+    &.-article {
+
+        > .link {
+            display: inline-block;
+        }
+        
+        > .link .icon {
+            font-size: 60px;
         }
     }
 

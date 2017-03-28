@@ -13,21 +13,17 @@
  */
 
 get_header(); ?>
-	<section class="internal-banner">
-		<div class="container _text-center">
-			<h2 class="title">Sobre nós</h2>
-			<p class="description">Saiba um pouco mais sobre a nossa história</p>
-		</div>
-	</section>
+	<?php require_once get_template_directory() . '/template-parts/internal-banner.php'; ?>	
+	<?php require_once get_template_directory() . '/template-parts/util-bar.php'; ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<article class="internal-content">
+					<article class="internal-content" id="maincontent" tab-index="-1">
 						<header>
 							<h1><?php the_title(); ?></h1>
-							<?php the_content(); ?>
 						</header>
+						<?php the_content(); ?>
 					</article>						
 				</div>
 				<aside class="col-md-3">
@@ -36,38 +32,41 @@ get_header(); ?>
 							<span class="sr-text" id="searchInfo">Aqui você pode buscar as informações do site.</span>
 							<input type="text" placeholder="O que você procura?" class="form-control icon-search" />
 							<div class="addon">
-								<button class="button icon-search"></button>
+								<button class="button icon-search" title="Buscar"></button>
 							</div>
 						</div>
 					</form>
 					<div class="_section-site">
 						<h2><span class="icon-article"></span> Mais lidos</h2>
-						<ul class="list-events">
+						<ul class="list-events -bordergray -article">
 							<li class="item">
-								<a href="#" class="link"><span class="icon icon-angle-right"> O mundo dos Surdos</a>
+								<a href="#" class="link">O mundo dos Surdos</a>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 							</li>
 							<li class="item">
-								<a href="#" class="link"><span class="icon icon-angle-right"> Semana do surdo - Crispiniano Soares</a>
+								<a href="#" class="link">Semana do surdo - Crispiniano Soares</a>
+								<p class="text">Quam iure vel sed, eum saepe nam excepturi tenetur nobis...</p>
 							</li>
 							<li class="item">
-								<a href="#" class="link"><span class="icon icon-angle-right"> Dia do Surdo</a>
+								<a href="#" class="link">Dia do Surdo</a>
+								<p class="text">Distinctio aperiam eveniet, modi laborum animi a, officiis..</p>
 							</li>
 						</ul>
 					</div>
 					<div class="_section-site">
 						<h2><span class="icon-calendar"></span> Próximos eventos</h2>
-						<ul class="list-events">
+						<ul class="list-events -border">
 							<li class="item">
 								<span class="date">11/02/2017 - 17h</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"> Encontro de casais</a>
+								<a href="#" class="link"><span class="icon icon-angle-right"></span> Encontro de casais</a>
 							</li>
 							<li class="item">
 								<span class="date">25/02/2017 - 14h</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"> Reunião mensal</a>
+								<a href="#" class="link"><span class="icon icon-angle-right"></span> Reunião mensal</a>
 							</li>
 							<li class="item">
 								<span class="date">26/02/2017 - 18h30</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"> Comemoração dos aniversariantes do mês</a>
+								<a href="#" class="link"><span class="icon icon-angle-right"></span> Comemoração dos aniversariantes do mês</a>
 							</li>
 						</ul>
 					</div>
