@@ -22,8 +22,45 @@
 .form-search {
 
     .form-control,
-    .input-group > .addon > .button {
+    .input-group .input-group-button {
         color: $search-form-control-text;
         border-color: $search-form-control-border;
+    }
+}
+
+
+.wpcf7 .wpcf7-form {
+
+    .wpcf7-form-control-wrap {
+        display: block;
+    }
+
+    .wpcf7-not-valid-tip.message-site.-error {
+        @extend .message-site;
+        margin: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .ajax-loader {
+        background-image: url(../images/loader.svg);
+        width: 50px;
+        height: 50px;
+    }
+
+    .wpcf7-mail-sent-ok,
+    .wpcf7-validation-errors {
+        padding: 20px;
+        margin-bottom: 30px;        
+        border: none;
+        color: #fff;
+    }
+
+    .wpcf7-mail-sent-ok {
+        background-color: $form-success;
+    }
+
+    .wpcf7-validation-errors {
+        background-color: $form-error;
     }
 }

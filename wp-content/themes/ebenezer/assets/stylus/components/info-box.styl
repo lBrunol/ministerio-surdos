@@ -1,0 +1,79 @@
+.info-box {
+	padding: 20px;
+	margin-bottom: 30px;
+
+	//Variações de cores
+	&.-base {
+		background-color: $info-base;
+	}
+	
+	&.-aquablue {
+		background-color: $info-aquablue;
+	}
+	
+	&.-pastelblue {
+		background-color: $info-pastelblue;
+		color: #fff;
+	}
+
+	&.-rederror {
+		background-color: $info-rederror;
+	} 
+	
+	&.-list {
+
+		.info-box-title {
+			color: #fff;
+			margin: 0 0 20px;
+			font-size: 1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		
+		.info-box-text {
+			color: #fff;
+			font-size: 0.9375rem;
+		}
+	}
+
+	&.-especialidades{
+		padding: 30px 25px;	
+		
+		@media(min-width: $screen-sm-min) {
+			.info-box-title,
+			.info-box-text { 
+				margin-bottom: 0; 
+			}
+		}
+
+		.info-box-title {
+			font-size: toRem(24px);			
+			font-weight: normal;
+			font-style: italic;
+			color: #fff;
+		}
+
+		.info-box-text {
+			color: #fff;
+			font-size: toRem(20px);
+		}		
+	}
+
+
+	&.-big {
+		@media (min-width: $screen-md){
+			width: "calc(100% + %s)" % (($container-md / 12) * 2);
+			margin-left: -(($container-md / 12) * 1);
+		}
+
+		@media (min-width: $screen-lg){
+			width: "calc(100% + %s)" % (($container-lg / 12) * 2);
+			margin-left: -(($container-lg / 12) * 1);
+		}
+	}
+	
+	p:last-child, 
+	div:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -5,12 +5,18 @@
     flex-wrap: nowrap;
     align-items: flex-start;
 
-    > .link {
+    > .video-item-link {
         margin-right: 5px;
     }
 
-    > .content {
-        > .title {
+    .video-item-image {
+        width: 168px;
+        height: 94px;
+    }
+
+    .video-item-content {
+        .video-item-title {
+            margin-right: 0;
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 14px;
@@ -19,12 +25,12 @@
             text-transform: none;
         }
 
-        > .title > .link {
+        .video-item-link {
             text-decoration: none;
             color: inherit;
         }
 
-        > .date { 
+        .video-item-date { 
             font-size: 12px;
         }
     }

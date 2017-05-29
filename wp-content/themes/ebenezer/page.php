@@ -25,57 +25,31 @@ get_header(); ?>
 						</header>
 						<?php the_content(); ?>
 					</article>						
-				</div>
+				</div>				
 				<aside class="col-md-3">
-					<form action="javascript:void(0);" class="form-search _section-site">
-						<div class="input-group -full" aria-describedby="searchInfo">
-							<span class="sr-text" id="searchInfo">Aqui você pode buscar as informações do site.</span>
-							<input type="text" placeholder="O que você procura?" class="form-control icon-search" />
-							<div class="addon">
-								<button class="button icon-search" title="Buscar"></button>
-							</div>
-						</div>
-					</form>
-					<div class="_section-site">
-						<h2><span class="icon-article"></span> Mais lidos</h2>
-						<ul class="list-events -bordergray -article">
-							<li class="item">
-								<a href="#" class="link">O mundo dos Surdos</a>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-							</li>
-							<li class="item">
-								<a href="#" class="link">Semana do surdo - Crispiniano Soares</a>
-								<p class="text">Quam iure vel sed, eum saepe nam excepturi tenetur nobis...</p>
-							</li>
-							<li class="item">
-								<a href="#" class="link">Dia do Surdo</a>
-								<p class="text">Distinctio aperiam eveniet, modi laborum animi a, officiis..</p>
-							</li>
-						</ul>
-					</div>
-					<div class="_section-site">
-						<h2><span class="icon-calendar"></span> Próximos eventos</h2>
-						<ul class="list-events -border">
-							<li class="item">
-								<span class="date">11/02/2017 - 17h</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"></span> Encontro de casais</a>
-							</li>
-							<li class="item">
-								<span class="date">25/02/2017 - 14h</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"></span> Reunião mensal</a>
-							</li>
-							<li class="item">
-								<span class="date">26/02/2017 - 18h30</span>
-								<a href="#" class="link"><span class="icon icon-angle-right"></span> Comemoração dos aniversariantes do mês</a>
-							</li>
-						</ul>
-					</div>
+					<?php get_sidebar(); ?>
 					<div class="_section-site">
 						<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
+						<!--<div class="fb-page" data-href="https://www.facebook.com/mandebem.noenem" data-tabs="timeline" data-width="255" data-height="255" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>-->
 					</div>
 				</aside>
 			</div>
 		</div>
-	<?php endwhile; ?>		
+		<div class="floater-site -gallery -large">
+			<div class="floater-site-dialog">
+				<div class="floater-site-content">
+					<button type="button" class="close"><i class="icon icon-cancel"></i></button>
+					<div class="floater-gallery">
+						<button class="js-left-gallery floater-gallery-icon -left" type="button"><i class="icon icon-angle-left"></i></button>
+						<img src="/wp-content/themes/ebenezer/images/loader-white.svg" alt="" class="floater-gallery-image -loader" />
+						<img src="javascript:;" alt="" class="floater-gallery-image -photo js-hidden" />
+						<p class="floater-gallery-message js-hidden">Não foi possível carregar a imagem</p>
+						<button class="js-right-gallery floater-gallery-icon -right" type="button"><i class="icon icon-angle-right"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="floater-background"></div>
+	<?php endwhile; ?>
 <?php
 get_footer();

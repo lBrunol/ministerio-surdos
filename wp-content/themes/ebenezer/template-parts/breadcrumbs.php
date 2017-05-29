@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Hospital_do_Coração
+ * @package ebenezer
  */
 
 /**
@@ -17,11 +17,9 @@ function ebenezer_get_breadcrumbs() {
 
     if ( is_page() ) {
         $type = 'page';
-    } else if ( is_tax() ) {
-        $type = 'tax';
-	} else if ( is_archive() ) {
-        $type = 'archive';
-    } else if ( is_single() ) {
+    } else if ( is_category() ) {
+        $type = 'cat';
+	} else if ( is_single() ) {
         $type = 'single';
     }
 
@@ -35,35 +33,25 @@ function ebenezer_get_breadcrumbs() {
         return false;
     }
 
-	//Pega o post type atual
-	$post_type = get_post_type();
-	//Pega o slug do archive
-	$slug_archive = get_post_type_archive_link( get_post_type() );
-	//Pega aos dados do archive
-	$archive_data = ebenezer_get_post_type_data();
-
     if ( $type == 'page' ) {
 		//Adiciona os ancestrais ao bread caso a página possua
         ebenezer_get_bread_array( $bread, get_ancestors( $post -> ID, $type ) );
 		$title = get_the_title( $post -> ID );
 
-    } else if ( $type == 'archive' ) {
-        $title = $archive_data -> label;
-
-	} else if ( $type == 'tax' ) {
-		$tax = get_queried_object();
-        $title = $tax -> name;
+    } else if ( $type == 'cat' ) {
+        $title = single_cat_title( '', false );        
     } else if ( $type == 'single' ) {
 
-        $archive_data = ebenezer_get_post_type_data( $post -> ID );
+        $tax = get_the_category( $post -> ID );
         $title = get_the_title( $post -> ID );
-		
-		//Adiciona o archive no bread
-        array_push( $bread, array(
-            'title' => $archive_data -> label,
-            'slug' => $slug_archive
-        ) );
-		
+
+        if( $tax ){
+            //Adiciona a categoria no bread
+            array_push( $bread, array(
+                'title' => $tax[0] -> cat_name,
+                'slug' => get_term_link( $tax[0] )
+            ) );
+        }
     }
 
 	//Adiciona a página atual no bread
@@ -96,23 +84,24 @@ function ebenezer_get_bread_array( &$bread, $ancestors, $post_id = false ) {
 	}
 
 }
-$bread = ebenezer_get_breadcrumbs();
-?>
-<?php if ( $bread ) : ?>
-    <ul class="bread-site">
-    <?php foreach ( $bread as $key => $item ) : ?>
-        <li class="item">
-            <?php if ( $item['slug'] ) : ?>
-                <a href="<?php echo $item['slug']; ?>" class="link" title="<?php echo $item['title']; ?>">				
-            <?php endif; ?>
 
-            <span <?php if( count( $bread ) - 1 === $key ) echo 'class="php-active"'; ?>><?php echo $item['title']; ?></span>
+function ebenezer_render_breadcrumbs( $bread ) {
+    if ( $bread ) : ?>
+        <ul class="bread-site">
+            <?php foreach ( $bread as $key => $item ) : ?>
+                <li class="bread-site-item">
+                    <?php if ( $item['slug'] ) : ?>
+                        <a href="<?php echo $item['slug']; ?>" class="bread-site-link" title="<?php echo $item['title']; ?>">				
+                    <?php endif; ?>
 
-            <?php if ( $item['slug'] ) : ?>
-                </a>
-            <?php endif; ?>
-			<?php if( count( $bread ) - 1 !== $key ) : ?><span class="icon icon-down-dir"><?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
+                    <span <?php if( count( $bread ) - 1 === $key ) echo 'class="php-active"'; ?>><?php echo $item['title']; ?></span>
+
+                    <?php if ( $item['slug'] ) : ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if( count( $bread ) - 1 !== $key ) : ?><span class="bread-site-icon icon-down-dir"><?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif;
+}

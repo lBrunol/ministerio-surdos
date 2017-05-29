@@ -1,0 +1,28 @@
+.social-link {
+	display: block;
+	
+	.social-link-link {
+		text-align: center;
+		display: block;		
+		transition: 0.2s background ease-in-out;
+	}
+}
+.social-link.-default {
+	
+	@media(min-width: $screen-lg-min){
+		
+		margin-right: 5px;
+	}
+
+	.social-link-link {
+		padding: 5px;
+		font-size: toRem(16px);
+		border-radius: 4px;
+		
+		&:hover,
+		&:focus {
+            color: #fff;
+			background-color: darken($base, 30%);
+		}
+	}
+}

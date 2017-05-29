@@ -33,7 +33,7 @@
 		<?php endif; ?>
 		<h1 class="title"><?php echo $post_title; ?></h1>
 		<?php if( get_the_tag_list() ) : ?>			
-			<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="item">', '</li><li class="item">', '</li></ul>' ); ?>	
+			<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="list-categories-item">', '</li><li class="list-categories-item">', '</li></ul>' ); ?>	
 		<?php endif; ?>
 	</header>
 
@@ -43,6 +43,10 @@
 		?>
 	</div>
 	<?php 
-		echo do_shortcode('[fbcomments url="' . get_permalink() . '" count="off" num="5"]');
+		if ( comments_open() || get_comments_number() ) :
+			echo '<div class="_section-site"><h2>Comentários</h2>';
+			comments_template();
+			echo '</div>';
+		endif;
 	?>
 </article>

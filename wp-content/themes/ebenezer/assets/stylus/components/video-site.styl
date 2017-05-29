@@ -12,22 +12,21 @@
         display: block;
     }
 
-    > .link > .image,
-    > .image {
+    .video-site-image {
         width: 100%;
     }
     
-    > .link {
+    .video-site-link {
         display: block;
         position: relative;
     }
 
-    > .link.js-hidden,
-    > .label.js-hidden {
+    .video-site-link.js-hidden,
+    .video-site-label.js-hidden {
         display: none;
     }		
 
-    > .link .icon {
+    .video-site-link .video-site-icon {
         content: '\e80b';
         margin: auto;
         top: 0;
@@ -58,7 +57,7 @@
         }
     }
 
-    > .label {
+    .video-site-label {
         width: 100%;
 	    padding: 10px 15px;
         bottom: 0;
@@ -67,13 +66,13 @@
 	    text-align: center;
         background-color: rgba(0,0,0,0.7);        
 
-        > .description {
+        .video-site-description {
             width: 100%;
             margin-right: auto;
             margin-left: auto;
         }
         
-        > .description > .title {
+        .video-site-title {
             margin: 0;
             font-size: 20px;
             font-weight: 700;
@@ -83,7 +82,7 @@
             line-height: normal;	
         }
         
-        .link {
+        .video-site-link {
             color: #fff;
             
             &:hover,
@@ -102,11 +101,11 @@
 
     &.-article {
 
-        > .link {
+        .video-site-link {
             display: inline-block;
         }
         
-        > .link .icon {
+        .video-site-link .video-site-icon {
             font-size: 60px;
         }
     }
@@ -114,15 +113,15 @@
     
 
     @media (max-width: $screen-lg) {
-        > .link .icon:before {
+        .video-site-link .video-site-icon:before {
             line-height: 2;
         }
     }
 
     @media (max-width: $screen-vs) {
 
-        > .link .icon {
-            font-size: 80px;   
+        .video-site-link .video-site-icon {
+            font-size: 80px;
         }
         
     }

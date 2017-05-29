@@ -3,29 +3,26 @@
 	padding: 0;
 	margin: 0;
 	
-	> .item {
+	.bread-site-item {
 		font-size: toRem(14px);
 		list-style: none;
 		display: inline-block;	
 	}
-	
-	> .item > .link {
 
-		color: $bread-link;
-
+	.bread-site-item {
 		.php-active {
+			color: $bread-link;
 			font-weight: bold;
 			cursor: text;
-
-			&:hover,
-			&:focus,
-			&:active {
-				text-decoration: none;
-			}
 		}
 	}
 	
-	> .item > .icon {	
+	.bread-site-link {
+
+		color: $bread-link;
+	}
+	
+	.bread-site-icon {	
 		
 		&:before {
 			color: $bread-link;

@@ -1,10 +1,21 @@
 .accessibility-list{
 
-	> .item {
+	&.-home {
+		float: right;
+		.accessibility-list-item .accessibility-list-button {
+			color: $default-text-color;
+		}
+
+		.accessibility-list-item .accessibility-list-text {
+			font-size: 13px;
+		}
+	}
+
+	.accessibility-list-item {
 
 		display: inline-block;
 		
-		> .button {
+		.accessibility-list-button {
 			padding-right: 0;
 			padding-left: 20px;
 			font-size: toRem(20px);
@@ -20,7 +31,7 @@
 				outline: none;
 			}
 
-			.icon:before {
+			.accessibility-list-icon:before {
 				font-size: 100%;
 			}
 			
@@ -30,7 +41,6 @@
 			
 			^[1]:last-child ^[2..-1] {
 				padding-left: 10px;
-				font-weight: normal;				
 			}
 		}		
 	}	

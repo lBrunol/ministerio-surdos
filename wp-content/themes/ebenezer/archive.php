@@ -20,21 +20,21 @@ get_header(); ?>
 						while ( have_posts() ) : the_post(); ?>
 							<article class="post-summary -internal">
 								<?php 
-									$post_content = wp_trim_words( get_the_excerpt(), 100, ' [..]' );
+									$post_content = wp_filter_nohtml_kses( wp_trim_words( get_the_excerpt(), 100, ' [..]' ) );
 									$post_thumbnail = get_the_post_thumbnail();
 									$post_title = get_the_title();
 									$is_video = get_queried_object() -> slug === 'videos';
 									
 									if ( !$post_content ) {
-										$post_content = wp_trim_words( get_the_content(), 100, ' [..]' );
+										$post_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 100, ' [..]' ) );
 									}
 									$post_link = esc_url( get_permalink() );
 								?>
 								<?php if( $post_thumbnail ) : ?>
 									<div class="image">
 										<?php if( $is_video ) : ?><div class="video-site -article"><?php endif; ?>
-											<a href="<?php echo $post_link; ?>" class="link">
-												<?php if( $is_video ) : ?><span class="icon icon-play-circled2" aria-hidden="true"></span><?php endif; ?>
+											<a href="<?php echo $post_link; ?>" class="video-site-link">
+												<?php if( $is_video ) : ?><span class="video-site-icon icon-play-circled2" aria-hidden="true"></span><?php endif; ?>
 												<?php the_post_thumbnail( 'thumb_post' ); ?>
 											</a>
 										<?php if( $is_video ) : ?></div><?php endif; ?>
@@ -51,8 +51,8 @@ get_header(); ?>
 											</div>
 										<?php endif; ?>
 										<h1 class="title"><a href="<?php echo $post_link; ?>"><?php echo $post_title; ?></a></h1>
-										<?php if( get_the_tag_list() ) : ?>			
-											<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="item">', '</li><li class="item">', '</li></ul>' ); ?>	
+										<?php if( get_the_tag_list() ) : ?>
+											<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="list-categories-item">', '</li><li class="list-categories-item">', '</li></ul>' ); ?>	
 										<?php endif; ?>
 									</header>
 
@@ -83,8 +83,8 @@ get_header(); ?>
 						if( $pagination ) : ?>
 							<ul class="pagination-site">
 								<?php foreach( $pagination as $item ) : ?>
-									<?php $item = str_replace( 'page-numbers', 'link', str_replace( 'current', '-is-active', $item ) ); ?>
-									<li class="item"><?php echo $item; ?></a>
+									<?php $item = str_replace( 'page-numbers', 'pagination-site-link', str_replace( 'current', '-is-active', $item ) ); ?>
+									<li class="pagination-site-item"><?php echo $item; ?></a>
 								<?php endforeach; ?>
 							</ul>
 						<?php endif;
@@ -95,6 +95,10 @@ get_header(); ?>
 			</div>
 			<div class="col-md-3">
 				<?php get_sidebar(); ?>
+				<aside class="_section-site">
+					<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
+					<div class="fb-page" data-href="https://www.facebook.com/mandebem.noenem" data-tabs="timeline" data-width="255" data-height="255" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
+				</aside>
 			</div>
 		</div>
 	</div>

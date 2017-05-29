@@ -21,10 +21,20 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<!--<script>
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=1579593055401422";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>-->
 <div class="jump-to">
-	<a href="#maincontent" class="link">Ir até o conteúdo principal</a>
-	<a href="#mainnav" class="link">Ir até o menu principal</a>
-	<a href="#footer" class="link">Ir até o rodapé</a>
+	<a href="#maincontent" class="jump-to-link">Ir até o conteúdo principal</a>
+	<a href="#mainnav" class="jump-to-link">Ir até o menu principal</a>
+	<a href="#footer" class="jump-to-link">Ir até o rodapé</a>
 </div>
 <div class="wrapper-site">
 	<header class="header-site">
@@ -35,7 +45,7 @@
 				</div>
 				<div class="col-xs-6 __invisible-lg _text-right">
 					<div class="navbar-control">
-						<p class="text">Menu</p>
+						<p class="navbar-control-text">Menu</p>
 						<button type="button" class="navbar-toggle" aria-expanded="false" aria-label="Mostrar menu">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -45,12 +55,21 @@
 				</div>
 				<?php if( $main_menu_items ) : ?>
 				<div class="col-md-10">
+					<ul class="accessibility-list -home">
+						<li class="accessibility-list-item">
+							<button class="accessibility-list-button js-high-contrast" type="button" aria-hidden="true" title="Ativar/Desativar alto">
+								<span class="accessibility-list-text">Alto contraste</span>
+								<span class="sr-text">Ativar/Desativar alto contraste</span>
+								<span class="accessibility-list-icon icon-adjust"></span>
+							</button>
+						</li>
+					</ul>
 					<span class="sr-text">Menu Principal</span>
 					<nav class="container-nav" id="mainnav" tabindex="-1">
 						<ul class="nav-site">
 							<?php foreach( $main_menu_items as $item ) : ?>
 								<?php if( (int) $item -> menu_item_parent === 0 ) : ?>
-									<li class="item"><a href="<?php echo $item -> url; ?>" class="link" <?php if( $item -> target === '_blank' ) echo 'target="_blank"'; ?>><?php echo $item -> title; ?></a></li>
+									<li class="nav-site-item"><a href="<?php echo $item -> url; ?>" class="nav-site-link" <?php if( $item -> target === '_blank' ) echo 'target="_blank"'; ?>><?php echo $item -> title; ?></a></li>
 								<?php endif; ?>
 							<?php endforeach; ?>
 						</ul>

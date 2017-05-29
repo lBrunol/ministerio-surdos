@@ -1,10 +1,10 @@
 .internal-banner {
 
     background-color: $internal-banner-bg;
-    min-height: 350px;
+    height: 350px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     &.-image {
         background-size: cover;
@@ -18,8 +18,8 @@
 
     .title {
         padding: 0 15px;
-        margin: 0 0 40px 0;
-        font-size: toRem(60px);
+        margin: 0 0 25px 0;
+        font-size: toRem(45px);
         color: $internal-banner-color;
     }
 
@@ -27,5 +27,16 @@
         padding: 0 15px;        
         font-size: toRem(20px);
         color: $internal-banner-color;
+    }
+
+    @media (max-width: $screen-sm) {
+       .title {
+            font-size: toRem(25px);
+            margin: 0 0 15px 0;
+        }
+
+        .description {       
+            font-size: toRem(18px);
+        } 
     }
 }

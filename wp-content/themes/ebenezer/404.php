@@ -9,56 +9,34 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ebenezer' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ebenezer' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( ebenezer_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'ebenezer' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ebenezer' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<article class="internal-content -marginbottom">
+				<h1>Página não encontrada</h1>
+				<p>Verifique se o endereço informado na URL não está errado, ou tente fazer uma busca pela página desejada.</p>
+				<div class="row">
+					<form role="search" method="get" class="form-search _section-site" action="<?php echo get_home_url(); ?>">
+						<div class="input-group -full" aria-describedby="searchInfo">
+							<span class="sr-text" id="searchInfo">Aqui você pode buscar as informações do site.</span>
+							<input type="search" name="s" placeholder="O que você procura?" class="form-control icon-search" value="<?php get_search_query(); ?>" >
+							<div class="input-group-addon">
+								<button type="submit" class="input-group-button icon-search" title="Buscar"></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</article>
+		</div>
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+			<aside class="_section-site">
+				<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
+				<div class="fb-page" data-href="https://www.facebook.com/mandebem.noenem" data-tabs="timeline" data-width="255" data-height="255" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
+			</aside>
+		</div>
+	</div>
+</div>
 
 <?php
 get_footer();

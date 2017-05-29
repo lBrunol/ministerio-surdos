@@ -27,18 +27,18 @@
     /**
     * Prints HTML with meta information for the current post-date/time and author.
     */
-    function ebenezer_get_post_date() {
+    function ebenezer_get_post_date( $post_id = null ) {
         $time_string = array();
 
         $time_string = array(
-            'date_complete' => esc_attr( get_the_date( 'c' ) ),
-            'date_friendly' => esc_html( get_the_date() )
+            'date_complete' => esc_attr( get_the_date( 'c', $post_id ) ),
+            'date_friendly' => esc_html( get_the_date( '', $post_id ) )
         );
         
-        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+        if ( get_the_time( 'U', $post_id ) !== get_the_modified_time( 'U', $post_id ) ) {
             array_push( $time_string, array(
-                'modified_date_complete' => esc_attr( get_the_modified_date( 'c' ) ),
-                'modified_date_friendly' => esc_html( get_the_modified_date() )
+                'modified_date_complete' => esc_attr( get_the_modified_date( 'c', $post_id ) ),
+                'modified_date_friendly' => esc_html( get_the_modified_date( '', $post_id ) )
             ) );
         }
 
@@ -71,6 +71,33 @@
         }
 
         return $archive_data;
+    }
+
+    /**
+    * Salva post meta no banco
+    *
+    * @param  int  $post_id  id do post
+    * @param  string  $field  nome do campo na tabela de post meta
+    * @param  mixed  $value  valor do campo
+    *
+    */
+    function ebenezer_save_post_meta( $post_id, $field, $value ){
+
+        $old_value = get_post_meta( $post_id, $field, true );
+
+        if ( !empty( $value ) ) {
+            
+            $new_value = $value;
+
+            if ( !empty( $old_value ) ) {
+                update_post_meta( $post_id, $field, $new_value );
+            } else {
+                add_post_meta( $post_id, $field, $new_value );
+            }
+
+        } else if( !empty( $old_value ) ) {
+            delete_post_meta( $post_id, $field, $old_value );
+        }
     }
 
     /**

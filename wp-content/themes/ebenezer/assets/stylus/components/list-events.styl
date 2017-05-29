@@ -1,52 +1,49 @@
 .list-events {
 
     &.-border {
-        > .item {
+        .list-events-item {
             border-bottom: 1px solid $list-events-border-bottom;
             margin-bottom: 20px;
         }
     }
 
     &.-bordergray {
-        > .item {
+        .list-events-item {
             border-bottom: 1px solid $list-events-border-bottom-gray;
             margin-bottom: 15px;
         }
     }
 
     &.-article {
-        > .item > .text {
+        .list-events-text {
             font-size: toRem(14px);
             margin: 0 0 15px;
         }
     }
-
-    > .item {
         
-        > .date {
-            font-size: toRem(12px);
-            display: block;
-        }
+    .list-events-date {
+        font-size: toRem(12px);
+        display: block;
+    }
 
-        > .link {
-            width: 100%;
-            padding-bottom: 15px;
-            font-weight: bold;
-            color: $list-events-link-color;
+    .list-events-link {
+        width: 100%;
+        padding-bottom: 15px;
+        font-weight: bold;
+        color: $list-events-link-color;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken(@color, 30%);
             text-decoration: none;
-            display: inline-block;
-
-            &:hover,
-            &:focus,
-            &:active {
-                color: darken(@color, 30%);
-                text-decoration: none;
-                outline: 0;
-            }
-        }
-
-        > .link > .icon {
-            margin-left: -7px;
+            outline: 0;
         }
     }
+
+    .list-events-icon {
+        margin-left: -7px;
+    }    
 }

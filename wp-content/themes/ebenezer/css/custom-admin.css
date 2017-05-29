@@ -1,0 +1,140 @@
+/*
+ * HCor - institucional
+ *
+ * Estilização do admin
+ *
+ * @author Foster
+ * @version 1.0
+ *
+ */
+
+.container-convenios { 
+	width: 33%; 
+	display: inline-block; 
+	margin-bottom: 40px; 
+}
+
+.caption-field {
+	margin-bottom: 10px;
+	font-weight: bold;
+	display: inline-block;
+}
+.field-checkbox {
+	margin-right: 5px;
+	margin-bottom: 10px;
+	display: block;
+}
+.field-checkbox span { display: block;}
+
+.form-field.no-label{ padding-top: 20px; }
+
+
+
+/* Radio com imagens */
+.form-field-radio{ margin: 0 -5px; }
+.form-field-radio label{ display: block; margin-left: 5px; }
+
+.radio-img{ margin: 0 5px; display: inline-block!important; padding: 10px; border: 1px solid #ddd; width: 150px; text-align: center; border-radius: 3px; }
+.radio-img img{ margin-bottom: 5px; }
+.radio-img input{ display: block; margin: 0 auto; }
+
+.form-field input[type="text"],
+.form-field input[type="date"],
+.form-field textarea { display: block; }
+
+.form-field input[type="date"] { width: 95%; }
+
+.postbox .inside{ overflow: hidden; }
+.wp-col-12,
+.wp-col-11,
+.wp-col-10,
+.wp-col-9,
+.wp-col-8,
+.wp-col-7,
+.wp-col-6,
+.wp-col-5,
+.wp-col-4,
+.wp-col-3,
+.wp-col-2,
+.wp-col-1{ float: left; padding: 0 5px; box-sizing: border-box; margin-top: 10px; }
+.wp-col-12{ width: 100%; }
+.wp-col-11{ width: 91.666%; }
+.wp-col-10{ width: 83.333%; }
+.wp-col-9{ width: 75%; }
+.wp-col-8{ width: 66.666%; }
+.wp-col-7{ width: 58.333%; }
+.wp-col-6{ width: 50%; }
+.wp-col-5{ width: 41.666%; }
+.wp-col-4{ width: 33.333%; }
+.wp-col-3{ width: 25%; }
+.wp-col-2{ width: 16.666%; }
+.wp-col-1{ width: 8.333%; }
+
+.wp-col-12 input[type="text"],
+.wp-col-11 input[type="text"],
+.wp-col-10 input[type="text"],
+.wp-col-9 input[type="text"],
+.wp-col-8 input[type="text"],
+.wp-col-7 input[type="text"],
+.wp-col-6 input[type="text"],
+.wp-col-5 input[type="text"],
+.wp-col-4 input[type="text"],
+.wp-col-3 input[type="text"],
+.wp-col-2 input[type="text"],
+.wp-col-1 input[type="text"],
+.wp-col-12 textarea,
+.wp-col-11 textarea,
+.wp-col-10 textarea,
+.wp-col-9 textarea,
+.wp-col-8 textarea,
+.wp-col-7 textarea,
+.wp-col-6 textarea,
+.wp-col-5 textarea,
+.wp-col-4 textarea,
+.wp-col-3 textarea,
+.wp-col-2 textarea,
+.wp-col-1 textarea,
+.wp-col-12 select,
+.wp-col-11 select,
+.wp-col-10 select,
+.wp-col-9 select,
+.wp-col-8 select,
+.wp-col-7 select,
+.wp-col-6 select,
+.wp-col-5 select,
+.wp-col-4 select,
+.wp-col-3 select,
+.wp-col-2 select,
+.wp-col-1 select{ width: 100%; }
+
+.input-sugestoes { position: relative; }
+.input-sugestoes .sugestoes { position: absolute; top: 37px; left: 6px; width: 100%; max-height: 110px; border: 1px solid #dddddd; overflow: auto; background-color: #fff; max-width: 600px; display: none; z-index: 100; }
+.input-sugestoes .sugestoes.active { display: block; }
+.input-sugestoes .sugestoes ul { margin: 0; }
+.input-sugestoes .sugestoes ul li { list-style: none; padding: 3px; display: none; margin: 0; }
+.input-sugestoes .sugestoes ul li.active { display: block; }
+.input-sugestoes .sugestoes ul li:hover { color: #fff; background-color: #0085ba; cursor: pointer; }
+
+.input-sugestoes .tagchecklist { margin-top: 10px; width: 100%; }
+.input-sugestoes .tagchecklist > span { padding-left: 5px; }
+.input-sugestoes .tagchecklist > span > span { margin: 0; }
+
+.text-center { text-align: center; }
+
+.multiselect-list .btn-add-option { margin-top: 20px;}
+.multiselect-list .btn-remove-option { margin-top: 5px; }
+
+.multiselect-list .btn-add-option:before,
+.multiselect-list .btn-remove-option:before { line-height: inherit; }
+
+@media screen and (max-width: 768px) {
+    .wp-col-12,
+    .wp-col-6,
+    .wp-col-4,
+    .wp-col-3,
+    .wp-col-2{ width: 100%; }
+}
+
+.login h1 a {
+	background-image: url('/wp-content/themes/ebenezer/images/logo.png');
+}

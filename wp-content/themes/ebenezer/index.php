@@ -18,36 +18,11 @@ get_header(); ?>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/quem-somos.jpg" alt="Quem somos" class="_center-block _img-responsive" />
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis augue et vehicula hendrerit. Praesent volutpat, felis ac tincidunt cursus, diam quam tristique arcu, eget consequat dui orci et turpis.</p>
 					<p>Vestibulum ultrices consectetur nisi placerat bibendum. Vivamus eget ipsum a ante eleifend blandit et eget mauris.</p>
-					<p class="_btn-margin"><a href="#" class="btn-default">Saiba mais sobre nós</a>
+					<p class="_btn-margin"><a href="/sobre-nos/" class="btn-default">Saiba mais sobre nós</a>
 				</div>
 			</div>
 			<aside class="col-md-3">
-				<form action="javascript:void(0);" class="form-search _section-site">
-					<div class="input-group -full" aria-describedby="searchInfo">
-						<span class="sr-text" id="searchInfo">Aqui você pode buscar as informações do site.</span>
-						<input type="text" placeholder="O que você procura?" class="form-control icon-search" />
-						<div class="addon">
-							<button class="button icon-search" title="Buscar"></button>
-						</div>
-					</div>
-				</form>
-				<div>
-					<h2><span class="icon-calendar"></span> Próximos eventos</h2>
-					<ul class="list-events -border">
-						<li class="item">
-							<span class="date">11/02/2017 - 17h</span>
-							<a href="#" class="link"><span class="icon icon-angle-right"> Encontro de casais</a>
-						</li>
-						<li class="item">
-							<span class="date">25/02/2017 - 14h</span>
-							<a href="#" class="link"><span class="icon icon-angle-right"> Reunião mensal</a>
-						</li>
-						<li class="item">
-							<span class="date">26/02/2017 - 18h30</span>
-							<a href="#" class="link"><span class="icon icon-angle-right"> Comemoração dos aniversariantes do mês</a>
-						</li>
-					</ul>
-				</div>
+				<?php dynamic_sidebar( 'home_sidebar' ); ?>
 			</aside>
 		</div>
 		<div class="row">
@@ -56,122 +31,117 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="info-icon">
-							<span class="icon icon-sign-language"></span>
-							<h2 class="title">Curso de Libras Grátis</h2>
-							<p class="text">Nós oferecemos cursos de libras grátis para a comunidade. Você pode aprender do básico ao avançado, <a href="#">clique aqui</a> e saiba como participar.</p>
+							<span class="info-icon-icon icon-sign-language"></span>
+							<h2 class="info-icon-title">Curso de Libras</h2>
+							<p class="info-icon-text">Para contribuir na interação comunicação entre surdos e ouvintes.</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="info-icon">
-							<span class="icon icon-address-card"></span>
-							<h2 class="title">Indicação de deficientes auditivos para o mercado de trabalho</h2>
-							<p class="text">Caso sua empresa possua vagas para deficientes auditivos, entre em <a href="#">contato conosco</a>.</p>
+							<span class="info-icon-icon icon-address-card"></span>
+							<h2 class="info-icon-title">Contrate um surdo</h2>
+							<p class="info-icon-text">Para desenvolver o papel social da inclusão em todas as áreas. <a href="/fale-conosco/">Clique aqui</a> e entre em contato conosco.</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="info-icon">
-							<span class="icon icon-interpretation"></span>
-							<h2 class="title">Interpretação de Libras/Português</h2>
-							<p class="text">Se você necessita de interpretação de português para libras em eventos, palestras e reuniões <a href="#">clique aqui</a> e saiba como contratar.</p>
+							<span class="info-icon-icon icon-interpretation"></span>
+							<h2 class="info-icon-title">Interpretação</h2>
+							<p class="info-icon-text">Serviços de apoio as empresas para interpretação da Língua de Sinais.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>            
+		<?php 
+			$artigos = get_posts(array(
+                'numberposts' => 2,
+                'category' => 3
+            ));
+		?>
 		<div class="row">
-			<div class="col-md-9">
-				<div class="_section-site">
-					<h1><span class="icon-newspaper"></span> Artigos</h1>
-					<div class="row">
-						<div class="col-md-6">
-							<article class="post-summary">
-								<div class="date"><span class="icon-calendar-empty"><span> <time datetime="2017/02/04">04/02/2017</time></div>
-								<h2 class="title">O mundo dos Surdos</h2>
-								<ul class="list-categories">
-									<li class="item">Cultura</li>
-									<li class="item">Aprendizagem</li>
-									<li class="item">Arte</li>
-								</ul>
-								<p class="text">Um grupo de alunas do curso de Educomunicação da Escola de Comunicações e Artes da Universidade de São Paulo (ECA-USP) produziu em 2014 o vídeo “O mundo dos surdos: nosso breve mergulho”.</p>
-								<a href="#" class="link">Continue Lendo...</a>
-							</article>
+            <?php if( $artigos ) : ?>
+				<div class="col-md-9">
+					<div class="_section-site">
+						<h1><span class="icon-newspaper"></span> Artigos</h1>
+						<div class="row">
+							<?php foreach ( $artigos as $artigo ) : ?>
+							<?php 
+								$post_content = wp_trim_words( $artigo -> post_excerpt, 20, '...' );
+								$post_dates = ebenezer_get_post_date( $artigo -> ID );
+								if ( !$post_content ) {
+									$post_content = wp_trim_words( $artigo -> post_content, 20, '...' );
+								}
+							?>
+								<div class="col-md-6">
+									<article class="post-summary">
+										<div class="date"><span class="icon-calendar-empty"><span> <time datetime="<?php echo $post_dates['date_complete']; ?>"><?php echo $post_dates['date_friendly']; ?></time></div>
+										<h2 class="title"><?php echo $artigo -> post_title; ?></h2>
+										<?php if( get_the_tag_list( $artigo -> ID ) ) : ?>
+											<?php echo $tags_list = get_the_tag_list( '<ul class="list-categories"><li class="list-categories-item">', '</li><li class="list-categories-item">', '</li></ul>' ); ?>	
+										<?php endif; ?>								
+										<p class="text"><?php echo $post_content; ?></p>
+										<a href="<?php echo get_permalink( $artigo -> ID ); ?>" class="link">Continue Lendo <span class="sr-text"><?php echo $artigo -> post_title; ?></span></a>
+									</article>
+								</div>
+							<?php endforeach; wp_reset_postdata(); ?>
 						</div>
-						<div class="col-md-6">
-							<article class="post-summary">
-								<div class="date"><span class="icon-calendar-empty"><span> <time datetime="2017/02/02">02/02/2017</time></div>
-								<h2 class="title">Semana do surdo - Crispiniano Soares</h2>
-								<ul class="list-categories">
-									<li class="item">Cultura</li>
-									<li class="item">Eventos</li>
-								</ul>
-								<p class="text">A EPG Crispiniano Soares, uma escola polo para a surdez no município de Guarulhos (SP), realizará entre os dias 26 e 28 de setembro de 2016 a sua 9º Semana do Surdo...</p>
-								<a href="#" class="link">Continue Lendo...</a>
-							</article>
-						</div>
+						<p class="_btn-margin _text-right"><a href="/artigos/" class="btn-default">Veja mais</a></p>
 					</div>
-					<p class="_btn-margin _text-right"><a href="#" class="btn-default">Veja mais</a></p>
 				</div>
-			</div>
+			<?php endif; ?>
 			<aside class="col-md-3">
 				<div class="_section-site">
 					<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
 				</div>
 			</aside>
 		</div>
+		<?php 
+			$videos = get_posts(array(
+                'numberposts' => 4,
+                'category' => 4
+            ));
+		?>
+		<?php if( $videos ) : ?>
 		<div class="row">
 			<div class="col-md-12">
 				<h1><span class="icon-video"></span> Vídeos</h1>
 				<div class="row">
 					<div class="col-md-7">
 						<div class="video-site">
-							<a href="#" class="link" data-videoid="Iqej4uP7ogI" aria-label="Reproduzir vídeo - Curso de Libras - Módulo Prático: Aula 1 - Saudações e Apresentações">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/curso-libras-modulo-3.jpg" alt="" class="image _img-responsive" />
-								<span class="icon icon-play-circled2" aria-hidden="true"></span>
-							</a>
-							<div class="embed-responsive embed">
-							</div>							
-							<div class="label">
-								<div class="description">
-									<h2 class="title"><a href="#" class="link js-link">Curso de Libras - Módulo Prático: Aula 1 - Saudações e Apresentações</a></h2>
+							<a href="<?php echo get_permalink( $videos[0] -> ID ); ?>" class="video-site-link" title="<?php echo get_permalink( $videos[0] -> ID ); ?>" title="<?php echo $videos[0] -> post_title; ?>">
+								<img src="<?php echo get_the_post_thumbnail_url( $videos[0] -> ID, 'full' ); ?>" alt="" class="video-site-image _img-responsive" />
+							</a>	
+							<div class="video-site-label">
+								<div class="video-site-description">
+									<h2 class="video-site-title"><a href="<?php echo get_permalink( $videos[0] -> ID ); ?>" class="video-site-link js-link"><?php echo $videos[0] -> post_title; ?></a></h2>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-5">
-						<div class="list-videos">
-							<div class="video-item">
-								<a href="#" class="link">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/curso-libras-iniciante.jpg" alt="Curso de Libras Iniciantes - Alfabeto Manual e Números - Aula 1 - Prof. Luiz Albérico Falcão" />
-								</a>
-								<div class="content">
-									<h2 class="title"><a href="#" class="link">Curso de Libras Iniciantes - Alfabeto Manual e Números - Aula 1 - Prof. Luiz Albérico Falcão</a></h2>
-									<div class="date"><span class="icon-calendar-empty"><span> <time datetime="2017/02/02">02/02/2017</time></div>
-								</div>
+					<?php if( count( $videos ) > 1 ) : ?>
+						<div class="col-md-5">
+							<div class="list-videos">
+								<?php for ( $i=1; $i < count( $videos ); $i++ ) : ?>
+									<?php $video_date = ebenezer_get_post_date( $videos[$i] -> ID ); ?>
+									<div class="video-item">
+										<a href="<?php echo get_permalink( $videos[$i] -> ID ); ?>" class="video-item-link">
+											<img src="<?php echo get_the_post_thumbnail_url( $videos[$i] -> ID, 'thumb_video_home' ); ?>" alt="<?php echo $videos[$i] -> post_title; ?>" class="video-item-image" />
+										</a>
+										<div class="video-item-content">
+											<h2 class="video-item-title"><a href="<?php echo get_permalink( $videos[$i] -> ID ); ?>" class="video-item-link"><?php echo $videos[$i] -> post_title; ?></a></h2>
+											<div class="video-item-date"><span class="icon-calendar-empty"><span> <time datetime="<?php echo $video_date['date_complete']; ?>"><?php echo $video_date['date_friendly']; ?></time></div>
+										</div>
+									</div>
+								<?php endfor; ?>
+								<a href="/videos/" class="list-videos-more">Veja mais vídeos</a>
 							</div>
-							<div class="video-item">
-								<a href="#" class="link">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/aprenda-libras.jpg" alt="Aprenda LIBRAS com eficiência e rapidez (vocabulários básicos) " />
-								</a>
-								<div class="content">
-									<h2 class="title"><a href="#" class="link">Aprenda LIBRAS com eficiência e rapidez (vocabulários básicos)</a></h2>
-									<div class="date"><span class="icon-calendar-empty"><span> <time datetime="2017/01/29">29/01/2017</time></div>
-								</div>
-							</div>
-							<div class="video-item">
-								<a href="#" class="link">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/curso-libras.jpg" alt="Curso de Libras - Módulo Prático: Aula 2 - Família - HD" />
-								</a>
-								<div class="content">
-									<h2 class="title"><a href="#" class="link">Curso de Libras - Módulo Prático: Aula 2 - Família - HD</a></h2>
-									<div class="date"><span class="icon-calendar-empty"><span> <time datetime="2017/01/26">26/01/2017</time></div>
-								</div>
-							</div>
-							<a href="#" class="more">Veja mais vídeos</a>
 						</div>
-					</div>
+					<?php endif; ?>
 				</div>
 			</div>
-		</div>		
+		</div>
+		<?php endif; ?>
 	</div>
 
 <?php

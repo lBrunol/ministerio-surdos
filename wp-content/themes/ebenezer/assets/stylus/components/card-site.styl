@@ -1,0 +1,65 @@
+.content-card {
+    
+    margin-bottom: 25px;
+    @extend .clearfix;
+
+    .card-site {
+        width: 25%;
+        float: left;
+
+        @media (max-width: $screen-sm){
+            width: 50%;
+        }
+
+        @media (max-width: $screen-vs){
+            width: 100%;
+        }
+    }
+}
+
+.card-site {
+    .card-site-hover {
+        padding: 10px;
+        margin: 10px;
+        font-weight: bold;
+        font-family: Montserrat;
+        color: $card-site-color;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: $card-site-bg;
+        box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.18);
+        border-radius: 5px;
+        transition: .2s all linear;
+        display: block;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus,
+        &.-active {
+            color: $card-site-hover-color;
+            background-color: $card-site-bg-hover;
+        }
+
+    }
+
+    a.card-site-hover {
+
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {            
+            text-decoration: none;
+        }
+    }
+
+    &.-heightdefault {
+        .card-site-hover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+    }  
+}

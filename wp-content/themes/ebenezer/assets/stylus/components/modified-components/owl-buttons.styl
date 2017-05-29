@@ -8,17 +8,19 @@
     position: absolute;
     margin: auto;
 
-    .icon {
-        font-size: 70px;
-        color: $owl-page-bg;
+    button { 
+        .icon {
+            font-size: 70px;
+            color: $owl-page-bg;
+        }
 
-        &:hover,
-        &:focus,
-        &:active,
-        &:active:focus {
+        &:hover .icon,
+        &:focus .icon,
+        &:active.icon,
+        &:active:focus .icon {                    
             color: $owl-page-bg-hover;
             transition: all .1s ease-in-out;
-            opacity: 0.8;
+            opacity: 0.8;            
         }
     }
     .owl-prev,
