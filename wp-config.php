@@ -93,3 +93,14 @@ if ( !defined('ABSPATH') )
 
 /** Configura as variáveis e arquivos do WordPress. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** Configurações de segurança */
+/* Desabilita a atualização automática do wordpress */
+define( 'WP_AUTO_UPDATE_CORE', false );
+
+/*  Desabilita a atualização e o editor de plugins */
+define( 'DISALLOW_FILE_MODS', true );
+
+/* Desabilita as mensagens de erro do PHP */
+error_reporting(0);
+@ini_set(‘display_errors’, 0);

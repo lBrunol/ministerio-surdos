@@ -10,3 +10,33 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+# Add SVG support to the server
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
+AddEncoding x-gzip .svgz
+
+# Security configurations
+
+Options All -Indexes
+
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+<files wp-config.php>
+	order allow,deny
+	deny from all
+</files>
+
+# Block the include-only files
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^wp-admin/includes/ - [F,L]
+	RewriteRule !^wp-includes/ - [S=3]
+	RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+	RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+	RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
