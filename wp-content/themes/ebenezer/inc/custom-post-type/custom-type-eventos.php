@@ -61,8 +61,6 @@ function eventos_meta_box() {
     );
 }
 
-add_action( 'rest_api_init', 'eventos_api' );
-
 function eventos_meta(){
 	global $post;
 

@@ -25,10 +25,10 @@ get_header(); ?>
 			</div>
 			<aside class="col-md-3">
 				<?php get_sidebar(); ?>
-				<div class="_section-site">
+				<!--<div class="_section-site">
 					<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
 					<div class="fb-page" data-href="https://www.facebook.com/mandebem.noenem" data-tabs="timeline" data-width="255" data-height="255" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
-				</div>
+				</div>-->
 			</aside>
 		</div>
 	</div>

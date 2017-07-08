@@ -37,6 +37,7 @@ if ( ! function_exists( 'ebenezer_setup' ) ) :
 endif;
 
 add_action( 'after_setup_theme', 'ebenezer_setup' );
+remove_action('wp_head', 'wp_generator');
 
 //Desabilita a barra de administração do site
 show_admin_bar(false);

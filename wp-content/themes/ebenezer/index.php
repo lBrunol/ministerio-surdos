@@ -16,8 +16,7 @@ get_header(); ?>
 				<div class="_section-site">
 					<h1><span class="icon-user"></span> Quem somos</h1>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/quem-somos.jpg" alt="Quem somos" class="_center-block _img-responsive" />
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis augue et vehicula hendrerit. Praesent volutpat, felis ac tincidunt cursus, diam quam tristique arcu, eget consequat dui orci et turpis.</p>
-					<p>Vestibulum ultrices consectetur nisi placerat bibendum. Vivamus eget ipsum a ante eleifend blandit et eget mauris.</p>
+					<p>Somos um projeto missionário dentro da comunidade surda de nossa cidade, estamos atuando desde 2007 com a implantação do ministério dentro da Igreja Batista de Vila Barros.</p>
 					<p class="_btn-margin"><a href="/sobre-nos/" class="btn-default">Saiba mais sobre nós</a>
 				</div>
 			</div>
@@ -59,9 +58,9 @@ get_header(); ?>
                 'category' => 3
             ));
 		?>
-		<div class="row">
+		<!--<div class="row">
             <?php if( $artigos ) : ?>
-				<div class="col-md-9">
+				<div class="col-md-12">
 					<div class="_section-site">
 						<h1><span class="icon-newspaper"></span> Artigos</h1>
 						<div class="row">
@@ -90,12 +89,12 @@ get_header(); ?>
 					</div>
 				</div>
 			<?php endif; ?>
-			<aside class="col-md-3">
+			<!--<aside class="col-md-3">
 				<div class="_section-site">
 					<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
 				</div>
 			</aside>
-		</div>
+		</div>-->
 		<?php 
 			$videos = get_posts(array(
                 'numberposts' => 4,

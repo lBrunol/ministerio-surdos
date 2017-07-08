@@ -9,7 +9,9 @@
 
 ?>
 <?php
+	global $wp;
 	$main_menu_items = wp_get_nav_menu_items( wp_get_nav_menu_object( 'principal' ) );
+	$current_url = home_url( add_query_arg( array(), $wp -> request ) ) . '/';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -54,7 +56,7 @@
 					</div>
 				</div>
 				<?php if( $main_menu_items ) : ?>
-				<div class="col-md-10">
+				<div class="col-lg-10">
 					<ul class="accessibility-list -home">
 						<li class="accessibility-list-item">
 							<button class="accessibility-list-button js-high-contrast" type="button" aria-hidden="true" title="Ativar/Desativar alto">
@@ -69,7 +71,9 @@
 						<ul class="nav-site">
 							<?php foreach( $main_menu_items as $item ) : ?>
 								<?php if( (int) $item -> menu_item_parent === 0 ) : ?>
-									<li class="nav-site-item"><a href="<?php echo $item -> url; ?>" class="nav-site-link" <?php if( $item -> target === '_blank' ) echo 'target="_blank"'; ?>><?php echo $item -> title; ?></a></li>
+									<li class="nav-site-item">
+										<a href="<?php echo $item -> url; ?>" class="nav-site-link<?php if( strpos( $current_url, $item -> url  ) !== false ) echo ' -active'; ?>" <?php if( $item -> target === '_blank' ) echo 'target="_blank"'; ?>><?php echo $item -> title; ?></a>
+									</li>
 								<?php endif; ?>
 							<?php endforeach; ?>
 						</ul>

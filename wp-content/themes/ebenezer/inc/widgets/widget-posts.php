@@ -9,7 +9,7 @@
         public function widget( $args, $instance ){
             $artigos = get_posts(array(
                 'numberposts' => 5,
-                'category' => 3
+                'category' => 2
             ));
 
             if( $artigos ) : ?>

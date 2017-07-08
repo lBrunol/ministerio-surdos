@@ -4,9 +4,12 @@
             $title = get_the_title();
             $description = get_the_excerpt();
             $image_url = get_the_post_thumbnail_url();
+        } else if( is_tag() ){
+            $title = !empty( ebenezer_get_the_archive_title() ) ? ebenezer_get_the_archive_title() : 'Ministério Ebenézer';
+            $description = !empty( ebenezer_get_the_archive_description() ) ? ebenezer_get_the_archive_description() : 'Confira todo conteúdo desta tag.';
         } else {
             $title = !empty( ebenezer_get_the_archive_title() ) ? ebenezer_get_the_archive_title() : 'Ministério Ebenézer';
-            $description = !empty( ebenezer_get_the_archive_description() ) ? ebenezer_get_the_archive_description() : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+            $description = !empty( ebenezer_get_the_archive_description() ) ? ebenezer_get_the_archive_description() : 'Ministério Ebenézer';
         }
     }
 ?>

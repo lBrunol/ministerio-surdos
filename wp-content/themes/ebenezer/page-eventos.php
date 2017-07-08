@@ -28,9 +28,9 @@ get_header(); ?>
 				</div>
 				<aside class="col-md-3">
 					<?php get_sidebar(); ?>
-					<div class="_section-site">
+					<!--<div class="_section-site">
 						<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
-					</div>
+					</div>-->
 				</aside>
 			</div>
 		</div>

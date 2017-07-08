@@ -1,0 +1,68 @@
+[caption id="attachment_34" align="alignright" width="400"]<img class="wp-image-34" title="Imagem pequena" src="http://dev.ministerio.ebenezer.com.br/wp-content/uploads/2017/03/imagem-exemplo-3.jpg" alt="Imagem pequena" width="400" height="220" /> Imagem pequena[/caption]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et molestie eros. Maecenas non tristique risus, ut lacinia ex. Fusce placerat metus a erat viverra, n
+on vestibulum nisi vulputate. Nam enim nisi, gravida vel enim id, feugiat ornare tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla sagittis nunc lorem, id porta metus consectetur quis. Vivamus blandit nisl mi, id ultricies tortor volutpat eu. Sed pulvinar metus a faucibus venenatis. Donec finibus tempor tempus. Nulla aliquet scelerisque tincidunt. Aliquam lacinia, orci a tristique elementum, massa ex venenatis mi, a convallis augue libero vel quam. Morbi mattis neque justo, ut ultrices diam rhoncus sit amet. In efficitur leo rhoncus luctus viverra. Curabitur convallis eu odio non vestibulum.
+<h2>Dolor sit amet</h2>
+Praesent aliquam a dui commodo ultricies. Cras fermentum ante et consectetur ultrices. Integer egestas arcu a tristique pretium. Sed erat tortor, consequat ut mattis ac, iaculis sed erat. Integer feugiat mi velit, nec tristique lorem volutpat nec. Cras eu posuere tortor, ac lacinia leo. Integer suscipit a tellus in tincidunt. Mauris egestas ligula vel dolor maximus cursus. Cras ornare lorem in risus aliquam ullamcorper. Suspendisse a sem ligula. Donec dignissim semper dignissim. Sed ac lacus vitae odio molestie luctus a id turpis. Quisque rhoncus sed felis ut accumsan.
+<h3>Donec finibus</h3>
+Nullam nec pharetra ligula. Donec finibus, quam quis mattis blandit, felis orci venenatis neque, vel euismod tortor erat quis tellus. Cras risus lorem, lacinia quis imperdiet non, euismod vulputate leo. Vestibulum id eros nec velit egestas auctor sit amet ac sem. Phasellus imperdiet, nunc vitae pretium pretium, nisi enim rhoncus ipsum, a dapibus lorem tortor eu tellus. Nunc ante eros, pretium a ipsum ac, fringilla finibus nibh. Praesent eleifend sed leo ut ullamcorper. Curabitur mauris orci, molestie tincidunt eros ut, pretium hendrerit purus. Integer fermentum enim eget justo condimentum, vitae semper neque euismod. Cras dictum sodales ligula, a porttitor velit dictum aliquam. Aliquam finibus, nulla at finibus tincidunt, felis elit lobortis enim, nec sagittis elit justo ac enim. Aliquam ultricies hendrerit sem et hendrerit. Morbi ut gravida nibh. Proin sit amet massa mi.
+<ul class="list-site">
+ 	<li>Praesent</li>
+ 	<li>Proin</li>
+ 	<li>Lorem</li>
+ 	<li>Nam</li>
+ 	<li>Donec</li>
+ 	<li>Phasellus</li>
+</ul>
+<img class="size-full wp-image-34 alignleft" src="http://dev.ministerio.ebenezer.com.br/wp-content/uploads/2017/03/imagem-exemplo-3.jpg" alt="" width="400" height="220" />Proin volutpat, ligula ut porta tincidunt, metus turpis pretium erat, non tincidunt ex diam egestas lorem. Nam a sagittis metus, sed aliquam eros. Praesent sit amet euismod metus. Sed consectetur, risus sit amet posuere porta, diam metus feugiat odio, at malesuada nisi orci maximus metus. Nullam porta interdum sagittis. Sed sed tempor mauris. Vestibulum dapibus elit dolor, in luctus nisi pharetra eget. Nunc ut lacinia urna. Praesent pellentesque nunc ac enim cursus, a ultrices arcu sagittis. Aenean pretium malesuada sollicitudin. Sed non erat orci. Aenean nec purus quis mauris imperdiet ornare vitae nec leo. Sed nec neque non justo rhoncus hendrerit eu volutpat nunc. Cras fermentum vulputate orci, maximus aliquet purus venenatis in. Praesent purus dui, ullamcorper ac nisi et, faucibus auctor quam. Suspendisse potenti.
+
+Duis a libero vitae urna finibus porttitor sit amet non dui. Cras at malesuada magna, vitae iaculis nisi. Aliquam eu consequat magna. Integer luctus dapibus hendrerit. Proin at posuere metus, a posuere tortor. Phasellus pretium feugiat massa at bibendum. Pellentesque neque felis, ullamcorper ac leo ac, ornare mollis purus. Morbi in lectus nibh. Nunc dapibus interdum lectus, id blandit nisi mollis nec. Sed convallis lobortis commodo. Vivamus ac arcu nisl. Vestibulum vitae facilisis augue, non eleifend urna. Sed pretium neque id arcu pellentesque convallis. Praesent scelerisque interdum leo placerat fringilla. Morbi sagittis interdum sem, et pharetra dui semper sed. Donec viverra justo urna.
+
+[caption id="attachment_21" align="alignnone" width="825"]<img class="wp-image-21 size-full" src="http://dev.ministerio.ebenezer.com.br/wp-content/uploads/2017/03/imagem-exemplo-1.jpg" alt="Imagem Teste" width="825" height="300" /> Imagem Teste[/caption]
+
+&nbsp;
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed elit sagittis, luctus augue sit amet, rhoncus tortor. Praesent enim augue, ornare at mi in, pretium ornare justo. Quisque in diam magna. Morbi dui dolor, laoreet et convallis ut, euismod ac risus. Morbi congue dolor sed neque imperdiet auctor. Vivamus sed volutpat nulla. Vivamus ornare imperdiet tortor. Nunc eget dignissim diam. Nulla vulputate tempor urna, quis scelerisque nibh sagittis a. Nullam eget convallis ante. Maecenas ultrices ligula vitae sem laoreet posuere. Praesent lacus risus, rutrum vel efficitur quis, viverra sit amet nisi. Sed et imperdiet urna, non ullamcorper mauris.
+
+Proin in dignissim sem. Cras sodales, tellus dignissim convallis sodales, nibh diam tincidunt ligula, in iaculis mauris nisi quis odio. Etiam non facilisis mi. Fusce commodo nisl eget gravida porttitor. Quisque et diam aliquam, condimentum sapien in, efficitur erat. Aenean id arcu nec mauris interdum elementum rutrum eget purus. Donec ut vulputate turpis. Aenean tempus quis felis a dapibus. Nullam eu magna aliquet, dapibus orci non, placerat nibh. In metus mi, fringilla ut tortor quis, feugiat interdum ante. Phasellus sed accumsan dui. Etiam feugiat placerat risus sed vestibulum. Fusce faucibus urna eget velit feugiat eleifend. Nam aliquet, quam a iaculis egestas, neque eros sagittis ligula, nec mattis enim ante in eros. Sed vel odio nec velit convallis ullamcorper. Nunc varius vel lacus at pretium.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur vitae luctus erat. Curabitur fringilla bibendum sapien, sit amet convallis ex varius id. Vestibulum commodo, felis nec vehicula lacinia, ante tortor consequat elit, nec vulputate tellus lectus nec nibh. Maecenas bibendum purus a mauris fermentum, at finibus lorem sollicitudin. Curabitur hendrerit interdum ex, quis ornare ex. Mauris blandit quam sed nibh ornare, a congue lectus tempor. Curabitur mattis venenatis tellus eget rhoncus. Etiam ut nibh sed risus varius eleifend vitae eu velit. Suspendisse venenatis urna at gravida malesuada. Pellentesque in augue felis. Donec ac orci et dui ultricies efficitur rhoncus ut nunc. Quisque dignissim diam ex, ut varius felis condimentum vel. Fusce rhoncus quam odio, eget eleifend metus feugiat vel.
+<div class="_table_overflow"><span class="message-site __invisible-lg __invisible-md">Para ver todos os dados da tabela, mova para direita ou para esquerda </span>
+<table class="table-site">
+<thead>
+<tr>
+<th colspan="2">CONDIÇÕES ASSOCIADAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hipertensão arterial</td>
+<td>Aumento dos triglicérides</td>
+</tr>
+<tr>
+<td>Doenças cardiovasculares</td>
+<td>Aumento do colesterol</td>
+</tr>
+<tr>
+<td>Doenças cérebro-vasculares</td>
+<td>Diminuição de HDL (“colesterol bom”)</td>
+</tr>
+<tr>
+<td>Diabetes Mellitus tipo 2</td>
+<td>Aumento da insulina</td>
+</tr>
+<tr>
+<td>Câncer</td>
+<td>Intolerância à glicose</td>
+</tr>
+<tr>
+<td>Osteoartrite</td>
+<td>Distúrbios menstruais/infertilidade</td>
+</tr>
+<tr>
+<td>Pedras na vesícula</td>
+<td>Apneia do sono</td>
+</tr>
+</tbody>
+</table>
+</div>
