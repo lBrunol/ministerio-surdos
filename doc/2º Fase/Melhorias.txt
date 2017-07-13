@@ -1,0 +1,7 @@
+﻿- Possibilidade de um artigo não aparecer no cross-link
+- Desativar evento
+- Galeria para artigos
+- Ver bug na galeria
+- Linha do tempo
+- Ver problema na font e no ícone do site
+- Ordem nos banners
