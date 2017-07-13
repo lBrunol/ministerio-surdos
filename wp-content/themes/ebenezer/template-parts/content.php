@@ -13,11 +13,11 @@
 ?>
 <article>
 	<?php 
-		$post_content = wp_trim_words( get_the_excerpt(), 100, ' [..]' );
+		$post_content = wp_trim_words( strip_shortcodes( get_the_excerpt(), 100, ' [..]' ) );
 		$post_title = get_the_title();
 		
 		if ( !$post_content ) {
-			$post_content = wp_trim_words( get_the_content(), 100, ' [..]' );
+			$post_content = wp_trim_words( strip_shortcodes( get_the_content(), 100, ' [..]' ) );
 		}
 		$post_link = esc_url( get_permalink() );
 	?>

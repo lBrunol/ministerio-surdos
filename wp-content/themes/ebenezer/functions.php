@@ -176,6 +176,11 @@ require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/custom-theme-functions.php';
 
 /*
+* Custom metaboxes
+*/
+require_once get_template_directory() . '/inc/meta-box-posts.php';
+
+/*
 * Custom post types
 */
 require_once get_template_directory() . '/inc/custom-post-type/custom-type-eventos.php';

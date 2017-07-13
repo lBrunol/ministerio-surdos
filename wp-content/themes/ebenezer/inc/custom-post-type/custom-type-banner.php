@@ -65,12 +65,18 @@ function banner_meta(){
     
     $banner_target = get_post_meta( $post -> ID, 'banner_target', true );
     $banner_link = get_post_meta( $post -> ID, 'banner_link', true );
-    $banner_active = get_post_meta( $post -> ID, 'banner_active', true );    
+    $banner_active = get_post_meta( $post -> ID, 'banner_active', true );
+    $banner_position = get_post_meta( $post -> ID, 'banner_position', true );
     
 ?>
     <div class="form-field">
         <label for="banner_link">Link</label><br>
         <input type="text" name="banner_link" id="banner_link" value="<?php echo $banner_link; ?>" />
+    </div>
+    <br>
+    <div class="form-field">
+        <label for="banner_position">Posição</label><br>
+        <input type="text" name="banner_position" id="banner_position" value="<?php echo $banner_position; ?>" />
     </div>
     <br>
     <div class="form-field">
@@ -96,6 +102,10 @@ function save_banner_post( $post_id ) {
                 array(
                     'field' => 'banner_target',
                     'value' => $_POST['banner_target']
+                ),
+                array(
+                    'field' => 'banner_position',
+                    'value' => $_POST['banner_position']
                 ),
                 array(
                     'field' => 'banner_link',

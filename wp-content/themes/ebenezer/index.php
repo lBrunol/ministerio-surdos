@@ -54,11 +54,11 @@ get_header(); ?>
 		</div>            
 		<?php 
 			$artigos = get_posts(array(
-                'numberposts' => 2,
-                'category' => 3
+                'numberposts' => 3,
+                'category' => get_category_by_slug( 'artigos' ) -> term_id
             ));
 		?>
-		<!--<div class="row">
+		<div class="row">
             <?php if( $artigos ) : ?>
 				<div class="col-md-12">
 					<div class="_section-site">
@@ -72,7 +72,7 @@ get_header(); ?>
 									$post_content = wp_trim_words( $artigo -> post_content, 20, '...' );
 								}
 							?>
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<article class="post-summary">
 										<div class="date"><span class="icon-calendar-empty"><span> <time datetime="<?php echo $post_dates['date_complete']; ?>"><?php echo $post_dates['date_friendly']; ?></time></div>
 										<h2 class="title"><?php echo $artigo -> post_title; ?></h2>
@@ -93,12 +93,12 @@ get_header(); ?>
 				<div class="_section-site">
 					<h2><span class="icon-facebook-squared"></span> Nossa página</h2>
 				</div>
-			</aside>
-		</div>-->
+			</aside>-->
+		</div>
 		<?php 
 			$videos = get_posts(array(
                 'numberposts' => 4,
-                'category' => 4
+                'category' => get_category_by_slug( 'videos' ) -> term_id
             ));
 		?>
 		<?php if( $videos ) : ?>

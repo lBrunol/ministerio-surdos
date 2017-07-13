@@ -7,12 +7,21 @@
         }
 
         public function widget( $args, $instance ){
+            
+            global $post;
+
             $artigos = get_posts(array(
                 'numberposts' => 5,
-                'category' => 2
+                'category' => get_category_by_slug( 'artigos' ) -> term_id,
+                'meta_query' => array(
+                    array(
+                        'key' => 'post_visible_crosslink',
+                        'compare' => 'NOT EXISTS'
+                    )
+                )
             ));
 
-            if( $artigos ) : ?>
+            if( $artigos && !( add_query_arg() === "/artigos/") ) : ?>
                 <div class="_section-site">
                     <h2><span class="icon-article"></span> Últimos artigos</h2>
                     <ul class="list-events -bordergray -article">

@@ -2,6 +2,9 @@
     $banners = new WP_Query( array(
         'post_type' => 'banners',
         'posts_per_page' => 20,
+        'meta_key' => 'banner_position',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
         'meta_query' => array(
             'relation' => 'AND',
             array(

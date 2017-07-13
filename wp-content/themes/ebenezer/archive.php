@@ -20,13 +20,13 @@ get_header(); ?>
 						while ( have_posts() ) : the_post(); ?>
 							<article class="post-summary -internal">
 								<?php 
-									$post_content = wp_filter_nohtml_kses( wp_trim_words( get_the_excerpt(), 100, ' [..]' ) );
+									$post_content = wp_filter_nohtml_kses( wp_trim_words( strip_shortcodes( get_the_excerpt(), 100, ' [..]' ) ) );
 									$post_thumbnail = get_the_post_thumbnail();
 									$post_title = get_the_title();
 									$is_video = get_queried_object() -> slug === 'videos';
 									
 									if ( !$post_content ) {
-										$post_content = wp_filter_nohtml_kses( wp_trim_words( get_the_content(), 100, ' [..]' ) );
+										$post_content = wp_filter_nohtml_kses( wp_trim_words( strip_shortcodes( get_the_content(), 100, ' [..]' ) ) ) ;
 									}
 									$post_link = esc_url( get_permalink() );
 								?>
@@ -58,10 +58,7 @@ get_header(); ?>
 
 									<div class="summary">
 										<?php
-											if( $is_video ) 
-												$text = "Veja o vídeo"; 
-											else 
-												$text = "Continue Lendo…";
+											$text = "Veja mais";
 
 											echo $post_content;
 											echo '<p><a href="' . $post_link . '" class="more-link">'. $text . ' <span class="sr-text">'. $post_title . '</span></a></p>';
