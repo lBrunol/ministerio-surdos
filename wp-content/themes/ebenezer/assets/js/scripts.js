@@ -75,47 +75,37 @@ var HomeBanner = function(){
 	
 	self.init = function(){
 		self.$homeBanner.owlCarousel({
-			autoPlay: 4000,
+			autoplay: true,
+			autoplayTimeout: 6000,
+			autoplayHoverPause: true,
+			items: 1,
 			loop: true,
-			navigation: true,
-			navigationText: ["<span class='sr-text'>Ir para o banner anterior</span><button class='js-left-banner' type='button'><i class='icon icon-angle-left'></i></button>", "<span class='sr-text'>Ir para o próximo banner</span><button type='button' class='js-right-banner'><i class='icon icon-angle-right'></i></button>"],
-			pagination: true,
-			responsive: true,
-			singleItem: true,
-			stopOnHover: true
+			nav: true,
+			navText: ["<span class='sr-text'>Ir para o banner anterior</span><button class='js-left-banner' type='button'><i class='icon icon-angle-left'></i></button>", "<span class='sr-text'>Ir para o próximo banner</span><button type='button' class='js-right-banner'><i class='icon icon-angle-right'></i></button>"],
+			dots: true
 		});
 	}
 
 	$(self.leftButton).on('click', function(e){
 		e.stopPropagation();
 
-		var owl = self.$homeBanner.data('owlCarousel');
-
-		if(typeof owl !== "undefined"){
-			owl.prev();
-		}
+		self.$homeBanner.trigger('prev.owl.carousel');
 	});
 
 	$(self.rightButton).on('click', function(e){
 		e.stopPropagation();
 
-		var owl = self.$homeBanner.data('owlCarousel');
-
-		if(typeof owl !== "undefined"){
-			owl.next();
-		}
+		self.$homeBanner.trigger('next.owl.carousel');
 	});
 
 	//Habilita a navegação por teclado no banner da home
 	$('body').on('keyup', function(e){
 
-		var owl = self.$homeBanner.data('owlCarousel');
-
-		if(typeof owl !== typeof undefined){
+		if(typeof self.$homeBanner !== typeof undefined){
 			if (e.keyCode == 37) {
-            	owl.prev();
+            	self.$homeBanner.trigger('prev.owl.carousel');
         	} else if (e.keyCode == 39) {
-            	owl.next();
+            	self.$homeBanner.trigger('next.owl.carousel');
 			}
 		}
 	});
